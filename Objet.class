@@ -1,6 +1,12 @@
 class abstract Objet{
     //attributs
-    string nom;
-    string etat;
-    List actions = new LinkedList<string>;
+    private string nom;
+    private string etat;
+    private List actions = new LinkedList<string>;
+
+    public Objet(string nom, string etat, LinkedList<string> actions){
+        this.nom = nom;
+        this.etat = etat;
+        this.actions = actions;
+    }
 }
