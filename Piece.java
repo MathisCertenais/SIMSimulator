@@ -3,10 +3,12 @@ import java.util.LinkedList;
 
 public abstract class Piece {
     // Attributs de la Pièce
+    String nom;
     LinkedList<Piece> piece_Ajacente;
     ArrayList<Objet> list_objets;  
 
-    public Piece(LinkedList<Piece> piece_Ajacent,ArrayList<Objet> list_objet) {
+    public Piece(String nom, LinkedList<Piece> piece_Ajacent,ArrayList<Objet> list_objet) {
+        this.nom = nom;
         this.piece_Ajacente =  piece_Ajacent;
         this.list_objets =  list_objet;
     }

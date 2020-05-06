@@ -3,8 +3,8 @@ import java.util.LinkedList;
 
 public class Exterieur extends Piece {
     
-    public Exterieur(LinkedList<Piece> Piece_Ajacent,ArrayList<Objet> list_objet) {
-        super(Piece_Ajacent,list_objet);
+    public Exterieur(String nom, LinkedList<Piece> Piece_Ajacent,ArrayList<Objet> list_objet) {
+        super(nom, Piece_Ajacent,list_objet);
     }
 
 }
