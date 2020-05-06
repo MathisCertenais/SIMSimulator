@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class Initialisation {
 
-public Maison initialiser() {
+public static Maison initialiser() {
     //objets de la maison
     LinkedList<String> actions = new LinkedList<String>() ;
     Objet camera = new Objet("Caméra de surveillance","non_utilisé",actions);
@@ -21,14 +21,14 @@ public Maison initialiser() {
     objets_exterieurAccueil.add(camera);
     objets_exterieurAccueil.add(lecteur_empreinte);
     objets_exterieurAccueil.add(sonnette);
-    exterieurAccueil = new Exterieur(piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
+    exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
 
     // pièce séjour
     LinkedList<Piece> piece_Ajacent_sejour= new LinkedList<Piece>();
     piece_Ajacent_sejour.add(exterieurAccueil);
     ArrayList<Objet> objets_exterieur_sejour = new ArrayList<Objet>();
     objets_exterieur_sejour.add(camera);
-    sejour = new Sejour(piece_Ajacent_sejour,objets_exterieur_sejour);
+    sejour = new Sejour("Sejour",piece_Ajacent_sejour,objets_exterieur_sejour);
 
      //liste pièce rez_de_chaussee
      LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
