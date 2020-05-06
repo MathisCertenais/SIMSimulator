@@ -5,12 +5,15 @@ public class Initialisation {
 
 public Maison initialiser() {
     //objets de la maison
-    Objet camera ;
+    LinkedList<String> actions = new LinkedList<String>() ;
+    Objet camera = new Objet("Caméra de surveillance","non_utilisé",actions);
+
     Objet lecteur_empreinte;
     Objet sonnette;
 
     Piece sejour;
     Piece exterieurAccueil;
+
     // pièce extérieure
     LinkedList<Piece> piece_Ajacent_exterieurAccueil = new LinkedList<Piece>();
     piece_Ajacent_exterieurAccueil.add(sejour);
@@ -28,14 +31,18 @@ public Maison initialiser() {
     sejour = new Sejour(piece_Ajacent_sejour,objets_exterieur_sejour);
 
      //liste pièce rez_de_chaussee
-     LinkedList<Piece> piece_rdc = new LinkedList<Piece>();
-     piece_rdc.add(sejour);
+     LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
+     pieces_rdc.add(sejour);
+     pieces_rdc.add(sejour);
 
-    //Liste étage 
+     //Etage rez_de_chaussee
+     Etage rdc = new RDC(pieces_rdc);
+    
+     //Liste étage 
+     LinkedList<Etage> liste_etages = new LinkedList<Etage>();
+     liste_etages.add(rdc);
 
-    LinkedList<Etage> liste_etages = new LinkedList<Etage>();
-    liste_etages.add(rez_de_chaussee);
-    Maison maMaison = new Maison(liste_etages);
+     Maison maMaison = new Maison(liste_etages);
 
     return maMaison;
 }
