@@ -1,0 +1,7 @@
+public abstract class Piece{
+
+    
+    LinkedList Liste_etages;
+    
+
+}
