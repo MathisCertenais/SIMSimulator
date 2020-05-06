@@ -5,5 +5,4 @@ public abstract class Piece{
     LinkedList Piece_Ajacente;
     ArrayList<Objet> list_objets;  
 
-
 }
