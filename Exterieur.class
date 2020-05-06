@@ -1,0 +1,12 @@
+public class Exterieur extends Piece {
+    
+    public Exterieur() {
+        super();
+        remplirePiece();
+    }
+
+priate void remplirePiece() {
+    
+}
+
+}

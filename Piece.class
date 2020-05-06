@@ -1,8 +1,10 @@
 
 public abstract class Piece{
-
-    Boolean porte;
     LinkedList Piece_Ajacente;
     ArrayList<Objet> list_objets;  
 
+    public Piece() {
+        this.Piece_Ajacente = new LinkedList<Piece>();
+        this.list_objets = new ArrayList<Objet>();
+    }
 }
