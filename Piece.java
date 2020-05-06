@@ -23,4 +23,8 @@ public abstract class Piece {
     public ArrayList<Objet> getlist_objet(){
         return  this.list_objets;
     }
+
+    public void ajouterPiece_Adj(Piece p){
+        this.piece_Ajacente.add(p);
+    }
 }
