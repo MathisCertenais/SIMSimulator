@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class RDC extends Etage{
     
     public RDC (LinkedList<Piece> list_piece){
