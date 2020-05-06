@@ -3,7 +3,7 @@ import java.util.*;
 abstract class Etage{
     private LinkedList<Piece> list_piece;
      Etage (){
-        list_piece = new linkedList<Piece>(); 
+       list_piece = new LinkedList<Piece>(); 
     }
  
     public Piece getPiece(int i) {
@@ -18,10 +18,9 @@ abstract class Etage{
         String tmp ="";
 
         for(int i=0 ; i<list_piece.size();i++){
-            
+            tmp = tmp + list_piece.get(i);
         }
-
-        return 
+        return tmp;
     }
 
 
