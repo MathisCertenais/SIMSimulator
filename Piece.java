@@ -12,10 +12,15 @@ public abstract class Piece {
         this.piece_Ajacente =  piece_Ajacent;
         this.list_objets =  list_objet;
     }
-    public LinkedList<Piece> Getpiece_Ajacent(){
+
+    public String getNom(){
+        return this.nom;
+    }
+
+    public LinkedList<Piece> getpiece_Ajacent(){
         return  this.piece_Ajacente;
     }
-    public ArrayList<Objet> Getlist_objet(){
+    public ArrayList<Objet> getlist_objet(){
         return  this.list_objets;
     }
 }
