@@ -2,8 +2,8 @@ import java.util.LinkedList;
 
 public class RDC extends Etage{
     
-    public RDC (LinkedList<Piece> list_piece){
-        super(list_piece);
+    public RDC (String nom,LinkedList<Piece> list_piece){
+        super(list_piece,nom);
     }
 
 }

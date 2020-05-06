@@ -36,7 +36,7 @@ public static Maison initialiser() {
      pieces_rdc.add(sejour);
 
      //Etage rez_de_chaussee
-     Etage rdc = new RDC(pieces_rdc);
+     Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
     
      //Liste étage 
      LinkedList<Etage> liste_etages = new LinkedList<Etage>();
