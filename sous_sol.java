@@ -5,7 +5,7 @@ public class sous_sol{
         Scanner sc = new Scanner(System.in);
         System.out.println("Bonjour et bienvenue dans notre maison, SIMSHouse.");
         System.out.println("Pour ouvrir la porte d'entrée, pressez 8 : ");
-        int i = sc.nextInt();;
+        int i = sc.nextInt();
     while (i != 8){
         System.out.println("Pour ouvrir la porte d'entrée, pressez 8 : ");
          
