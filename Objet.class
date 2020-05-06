@@ -1,6 +1,0 @@
-class abstract Objet{
-    //attributs
-    string nom;
-    string etat;
-    List actions = new LinkedList<string>;
-}
