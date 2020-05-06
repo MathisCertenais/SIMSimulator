@@ -27,7 +27,7 @@ public static Maison initialiser() {
     //objets_exterieurAccueil.add(lecteur_empreinte);
     //objets_exterieurAccueil.add(sonnette);
     exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
-    exterieurAccueil.ajouterPiece_Adj(exterieurAccueil);
+    sejour.ajouterPiece_Adj(exterieurAccueil);
     
 
      //liste pièce rez_de_chaussee
@@ -43,6 +43,8 @@ public static Maison initialiser() {
      liste_etages.add(rdc);
 
      Maison maMaison = new Maison(liste_etages);
+     maMaison.setEtage(rdc);
+     maMaison.setPiece(exterieurAccueil);
 
     return maMaison;
 }
