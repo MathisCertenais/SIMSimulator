@@ -2,8 +2,9 @@ import java.util.*;
 
 abstract class Etage{
     private LinkedList<Piece> list_piece;
-     Etage (){
-       list_piece = new LinkedList<Piece>(); 
+    
+    public Etage (LinkedList<Piece> list_piece){
+       this.list_piece = list_piece; 
     }
  
     public Piece getPiece(int i) {
