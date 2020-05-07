@@ -1,10 +1,7 @@
 package SimsSimulatorJava.src;
 
 import SimsSimulatorJava.src.pieces.*;
-import SimsSimulatorJava.src.objets.*;
-import SimsSimulatorJava.src.etages.*;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
