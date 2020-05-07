@@ -1,3 +1,5 @@
+package old_sprint_0;
+
 import java.util.*;
 
 abstract class Etage{
