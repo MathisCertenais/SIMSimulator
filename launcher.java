@@ -16,10 +16,10 @@ public static void main(String[] args) {
         int idAction = scan.nextInt();
         System.out.println("Aller dans la piece :");
         LinkedList<Piece> pieces_possibles = maison.getPiece().getpiece_Ajacent();
-        for (Piece p : pieces_possibles) {
-            System.out.println(p.getNom());      
+        for (int i=0; i<pieces_possibles.size(); i++) {
+            System.out.println(i + "- " + pieces_possibles.get(i).getNom());      
         }
-        int idPiece = scan.nextInt() + 1;
+        int idPiece = scan.nextInt();
         maison.setPiece(pieces_possibles.get(idPiece));
     }
 }
