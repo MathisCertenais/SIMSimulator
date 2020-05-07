@@ -1,6 +1,10 @@
+package SimsSimulatorJava.src.etages;
+
+import SimsSimulatorJava.src.pieces.*;
+
 import java.util.*;
 
-abstract class Etage{
+public abstract class Etage{
     private String nom;
     private LinkedList<Piece> list_piece;
     

@@ -1,3 +1,7 @@
+package SimsSimulatorJava.src.pieces;
+
+import SimsSimulatorJava.src.objets.*;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 

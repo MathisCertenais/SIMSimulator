@@ -1,4 +1,7 @@
-import java.util.ArrayList;
+package SimsSimulatorJava.src;
+
+import SimsSimulatorJava.src.pieces.*;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
