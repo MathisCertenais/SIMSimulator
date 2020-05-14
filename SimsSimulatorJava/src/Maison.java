@@ -21,13 +21,17 @@ public class Maison {
     }
 
     public void setEtage(Etage etage_actuel){
-        //verifier si l'etage est bien présent dans la maison
-        memory_etage = etage_actuel;
+        if (liste_etages.contains(etage_actuel)){
+            memory_etage = etage_actuel;
+        }
+        System.out.println("Impossible, l'étage n'existe pas");
     }
 
     public void setPiece(Piece piece_actuel){
-        //verifier si l'etage est bien présent dans la maison
-        memory_piece = piece_actuel;
+        if (memory_etage.getAllPiece().contains(piece_actuel)){
+            memory_piece = piece_actuel;
+        }
+        System.out.println("Impossible, la piece n'existe pas");
     }
 
     public Piece getPiece(){

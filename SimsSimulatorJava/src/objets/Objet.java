@@ -25,4 +25,8 @@ public abstract class Objet{
     public List<String> getAction(){
         return this.actions;
     }
+
+    public String realiserAction(int c){
+        return "Il ne se passe rien";
+    }
 }
