@@ -10,10 +10,9 @@ public abstract class Objet{
     private String etat;
     private LinkedList<String> actions = new LinkedList<String>();
 
-    public Objet(String nom, String etat, LinkedList<String> actions){
+    public Objet(String nom, String etat){
         this.nom = nom;
         this.etat = etat;
-        this.actions = actions;
     }
 
     public String getNom(){
