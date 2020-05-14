@@ -219,6 +219,67 @@ public static Maison initialiser() {
     /************-----------------FIN-1er-ETAGE--------------------------------********/
 
 
+    /************-----------------DEBUT--TOIT-------------------------------------********/
+
+    /**import pieces.EmplacementVehiculeAerien;
+    import pieces.PotagerHydroponique;
+    import pieces.EntrepotColis;
+    import pieces.ZonePanneauPhotovoltaique;**/
+
+    //emplacement vehicule aerien
+    LinkedList<Piece> piece_adjacent_EmplacementVehiculeAerien= new LinkedList<Piece>();
+    ArrayList<Objet> objets_EmplacementVehiculeAerien = new ArrayList<Objet>();
+    emplacementVehiculeAerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
+
+    //potager hydroponique
+    LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
+    ArrayList<Objet> objets_PotagerHydroponique = new ArrayList<Objet>();
+    potagerHydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
+
+    //entrepot colis
+    LinkedList<Piece> piece_adjacent_EntrepotColis= new LinkedList<Piece>();
+    ArrayList<Objet> objets_EntrepotColis = new ArrayList<Objet>();
+    entrepotColis = new EntrepotColis("Entrepot colis",piece_adjacent_EntrepotColis,objets_EntrepotColis);
+
+    //zone panneau photovoltaique
+    LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ZonePanneauPhotovoltaique = new ArrayList<Objet>();
+    zonePanneauPhotovoltaique = new ZonePanneauPhotovoltaique("Zone panneau photovoltaique",piece_adjacent_ZonePanneauPhotovoltaique,objets_ZonePanneauPhotovoltaique);
+
+
+    /************-----------------FIN--TOIT---------------------------------------********/
+
+
+
+    /************-----------------DEBUT--SOUS-SOL---------------------------------********/
+
+    /**import pieces.AscenseurVehicule;
+    import pieces.Garage;
+    import pieces.SalleServeur;
+    import pieces.CaveAVin;**/
+
+    //ascenseur vehicule
+    LinkedList<Piece> piece_adjacent_AscenseurVehicule = new LinkedList<Piece>();
+    ArrayList<Objet> objets_AscenseurVehicule = new ArrayList<Objet>();
+    ascenseurVehicule = new AscenseurVehicule("Ascenseur vehicule",piece_adjacent_AscenseurVehicule,objets_AscenseurVehicule);
+
+    //garage
+    LinkedList<Piece> piece_adjacent_Garage= new LinkedList<Piece>();
+    ArrayList<Objet> objets_Garage = new ArrayList<Objet>();
+    garage = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
+
+    //salle serveur
+    LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
+    ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
+    salleServeur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
+
+    //cave a vin
+    LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
+    ArrayList<Objet> objets_CaveAVin = new ArrayList<Objet>();
+    caveAVin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
+
+    
+    /************-----------------FIN--SOUS-SOL-----------------------------------********/
 }
 
 
