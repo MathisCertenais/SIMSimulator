@@ -1,9 +1,9 @@
-package SimsSimulatorJava.src;
 
-import SimsSimulatorJava.src.pieces.*;
-import SimsSimulatorJava.src.etages.Etage;
 
 import java.util.LinkedList;
+
+import etages.Etage;
+import pieces.Piece;
 
 public class Maison {
 

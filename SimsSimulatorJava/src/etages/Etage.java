@@ -1,8 +1,8 @@
-package SimsSimulatorJava.src.etages;
+package etages;
 
-import SimsSimulatorJava.src.pieces.*;
+import java.util.LinkedList;
 
-import java.util.*;
+import pieces.Piece;
 
 public abstract class Etage{
     private String nom;

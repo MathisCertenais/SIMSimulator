@@ -1,11 +1,14 @@
-package SimsSimulatorJava.src;
 
-import SimsSimulatorJava.src.pieces.*;
-import SimsSimulatorJava.src.objets.*;
-import SimsSimulatorJava.src.etages.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import etages.Etage;
+import etages.RDC;
+import objets.Objet;
+import pieces.Exterieur;
+import pieces.Piece;
+import pieces.Sejour;
 
 public class Initialisation {
 

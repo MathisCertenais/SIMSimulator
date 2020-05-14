@@ -1,4 +1,4 @@
-package SimsSimulatorJava.src.objets;
+package objets;
 
 
 import java.util.List;
@@ -14,5 +14,15 @@ public abstract class Objet{
         this.nom = nom;
         this.etat = etat;
         this.actions = actions;
+    }
+
+    public String getNom(){
+        return this.nom;
+    }
+    public String getEtat(){
+        return this.etat;
+    }
+    public List<String> getAction(){
+        return this.actions;
     }
 }

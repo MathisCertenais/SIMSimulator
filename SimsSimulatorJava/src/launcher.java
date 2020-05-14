@@ -1,9 +1,9 @@
-package SimsSimulatorJava.src;
 
-import SimsSimulatorJava.src.pieces.*;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+
+import pieces.Piece;
 
 public class launcher {
 
