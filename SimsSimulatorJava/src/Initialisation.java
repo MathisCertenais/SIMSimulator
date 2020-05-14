@@ -29,11 +29,10 @@ public class Initialisation {
 
 public static Maison initialiser() {
     //objets de la maison
-    LinkedList<String> actions = new LinkedList<String>() ;
+   /* LinkedList<String> actions = new LinkedList<String>() ;
     Objet camera ;
-
     Objet lecteur_empreinte;
-    Objet sonnette;
+    Objet sonnette;*/
 
     //Objet pièce sous-sol
     Piece emplacement_voitures;
@@ -68,8 +67,6 @@ public static Maison initialiser() {
     Piece entrepos_colis;
     Piece zone_panneaux_photovoltaique;
     Piece ascenseur_toit;
-    Piece salle_serveur;
-    Piece garage;
 
     
 
@@ -166,8 +163,8 @@ public static Maison initialiser() {
     ArrayList<Objet> objets_bureau = new ArrayList<Objet>();
     //
     bureau = new AccesGarage("Salle_de_bain",piece_Adjacent_bureau,objets_bureau);
-    chambre.ajouterPiece_Adj(sejour);
-    sejour.ajouterPiece_Adj(sejour);
+    chambre.ajouterPiece_Adj(bureau);
+    sejour.ajouterPiece_Adj(bureau);
 
     /************-----------------FIN--REZ-DE-CHAUSSEE---------------------------********/
 
@@ -217,8 +214,8 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
     piece_adjacent_SalleDeBain.add(salon);
     ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
-    salle_de_bain = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
-    salon.ajouterPiece_Adj(salle_de_bain);
+    sdb_Etage = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
+    salon.ajouterPiece_Adj(sdb_Etage);
 
     /************-----------------DEBUT--TOIT-------------------------------------********/
 
@@ -266,21 +263,21 @@ public static Maison initialiser() {
     //garage
     LinkedList<Piece> piece_adjacent_Garage= new LinkedList<Piece>();
     ArrayList<Objet> objets_Garage = new ArrayList<Objet>();
-    garage = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
-    ascenseur_vehicule.ajouterPiece_Adj(garage);
+    emplacement_voitures = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
+    ascenseur_vehicule.ajouterPiece_Adj(emplacement_voitures);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
-    salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
-    garage.ajouterPiece_Adj(salle_serveur);
+    serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
+    emplacement_voitures.ajouterPiece_Adj(serveur);
 
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
     ArrayList<Objet> objets_CaveAVin = new ArrayList<Objet>();
     cave_a_vin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
-    salle_serveur.ajouterPiece_Adj(cave_a_vin);
-    cave_a_vin.ajouterPiece_Adj(salle_serveur);
+    serveur.ajouterPiece_Adj(cave_a_vin);
+    cave_a_vin.ajouterPiece_Adj(serveur);
 
     
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
@@ -290,13 +287,52 @@ public static Maison initialiser() {
       LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
       pieces_rdc.add(sejour);
       pieces_rdc.add(exterieurAccueil);
+      pieces_rdc.add(homeCinema);
+      pieces_rdc.add(cuisine);
+      pieces_rdc.add(salleMultiGaming);
+      pieces_rdc.add(salle_de_bain);
+      pieces_rdc.add(bureau);
+      pieces_rdc.add(chambre);
+      pieces_rdc.add(toilette);
+
+       //liste pièce 1er etage 
+       LinkedList<Piece> pieces_1erEtage = new LinkedList<Piece>();
+       pieces_rdc.add(salon);
+       pieces_rdc.add(chambre_amis_1);
+       pieces_rdc.add(chambre_amis_2);
+       pieces_rdc.add(chambre_enfant_1);
+       pieces_rdc.add(chambre_enfant_1);
+       pieces_rdc.add(buanderie);
+       pieces_rdc.add(sdb_Etage);
+
+      //liste pièce toit
+      LinkedList<Piece> pieces_toit = new LinkedList<Piece>();
+      pieces_rdc.add(emplacement_véhicule_aerien);
+      pieces_rdc.add(potager_hydroponique);
+      pieces_rdc.add(entrepos_colis);
+      pieces_rdc.add(zone_panneaux_photovoltaique);
+
+       //liste pièce sous-sol
+       LinkedList<Piece> pieces_sous_sol = new LinkedList<Piece>();
+       pieces_rdc.add(emplacement_voitures);
+       pieces_rdc.add(cave_a_vin);
+       pieces_rdc.add(serveur);
  
       //Etage rez_de_chaussee
       Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
+      //Etage 1er
+      Etage etage1er = new RDC("1er_étage",pieces_1erEtage);
+      //Etage toit
+      Etage toit = new RDC("toit",pieces_toit);
+      //Etage sous-sol
+      Etage sous_sol = new RDC("sous-sol",pieces_sous_sol);
      
       //Liste étage 
       LinkedList<Etage> liste_etages = new LinkedList<Etage>();
       liste_etages.add(rdc);
+      liste_etages.add(etage1er);
+      liste_etages.add(toit);
+      liste_etages.add(sous_sol);
  
       Maison maMaison = new Maison(liste_etages);
       maMaison.setEtage(rdc);
