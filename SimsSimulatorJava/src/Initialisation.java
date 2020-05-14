@@ -6,17 +6,21 @@ import etages.Etage;
 import etages.RDC;
 import objets.Objet;
 import pieces.AccesGarage;
+import pieces.AscenseurVehicule;
 import pieces.Buanderie;
+import pieces.CaveAVin;
 import pieces.Chambre;
 import pieces.Cuisine;
 import pieces.EmplacementVehiculeAerien;
 import pieces.EntrepotColis;
 import pieces.Exterieur;
+import pieces.Garage;
 import pieces.HomeCinema;
 import pieces.Piece;
 import pieces.PotagerHydroponique;
 import pieces.SDB;
 import pieces.SalleMultiGaming;
+import pieces.SalleServeur;
 import pieces.Salon;
 import pieces.Sejour;
 import pieces.ZonePanneauPhotovoltaique;
@@ -64,6 +68,9 @@ public static Maison initialiser() {
     Piece entrepos_colis;
     Piece zone_panneaux_photovoltaique;
     Piece ascenseur_toit;
+    Piece salle_serveur;
+    Piece garage;
+
     
 
     /************-------------------REZ-DE-CHAUSSEE---------------------------********/
@@ -251,30 +258,29 @@ public static Maison initialiser() {
 
     /************-----------------DEBUT--SOUS-SOL---------------------------------********/
 
-    /**import pieces.AscenseurVehicule;
-    import pieces.Garage;
-    import pieces.SalleServeur;
-    import pieces.CaveAVin;**/
-
     //ascenseur vehicule
     LinkedList<Piece> piece_adjacent_AscenseurVehicule = new LinkedList<Piece>();
     ArrayList<Objet> objets_AscenseurVehicule = new ArrayList<Objet>();
-    ascenseurVehicule = new AscenseurVehicule("Ascenseur vehicule",piece_adjacent_AscenseurVehicule,objets_AscenseurVehicule);
+    ascenseur_vehicule = new AscenseurVehicule("Ascenseur vehicule",piece_adjacent_AscenseurVehicule,objets_AscenseurVehicule);
 
     //garage
     LinkedList<Piece> piece_adjacent_Garage= new LinkedList<Piece>();
     ArrayList<Objet> objets_Garage = new ArrayList<Objet>();
     garage = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
+    ascenseur_vehicule.ajouterPiece_Adj(garage);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
-    salleServeur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
+    salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
+    garage.ajouterPiece_Adj(salle_serveur);
 
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
     ArrayList<Objet> objets_CaveAVin = new ArrayList<Objet>();
-    caveAVin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
+    cave_a_vin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
+    salle_serveur.ajouterPiece_Adj(cave_a_vin);
+    cave_a_vin.ajouterPiece_Adj(salle_serveur);
 
     
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
