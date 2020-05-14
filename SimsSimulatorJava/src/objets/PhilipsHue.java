@@ -9,4 +9,12 @@ public class PhilipsHue extends Objet {
        actions.add("Allumer l'ampoule Philips Hue");    //Ajout des Actions de Bases de l'ampoule Philips Hue
        actions.add("Eteindre l'ampoule Philips Hue");
     }
+
+    @Override
+    public String realiserAction(int c) {
+        if(c == 0){
+            
+        }
+        return("Il ne se passe rien");
+    }
 }
