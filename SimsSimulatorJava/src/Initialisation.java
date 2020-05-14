@@ -6,11 +6,15 @@ import etages.Etage;
 import etages.RDC;
 import objets.Objet;
 import pieces.AccesGarage;
+import pieces.Buanderie;
+import pieces.Chambre;
 import pieces.Cuisine;
 import pieces.Exterieur;
 import pieces.HomeCinema;
 import pieces.Piece;
+import pieces.SDB;
 import pieces.SalleMultiGaming;
+import pieces.Salon;
 import pieces.Sejour;
 
 public class Initialisation {
@@ -38,7 +42,7 @@ public static Maison initialiser() {
     Piece salleMultiGaming;
     Piece bureau;
     Piece chambre;
-    Piece Salle_de_bain; 
+    Piece salle_de_bain; 
     Piece toilette;
     Piece ascenseur_rdc;
     //Objet pièce 1er étage
@@ -48,13 +52,13 @@ public static Maison initialiser() {
     Piece chambre_amis_1;
     Piece chambre_amis_2;
     Piece buanderie;
-    Piece SDB_Etage;
+    Piece sdb_Etage;
     Piece ascenseur_1etage;
     //Objet pièce toit
     Piece emplacement_véhicule_aerien;
     Piece potager_hydroponique;
     Piece entrepos_colis;
-    Piece panneaux_photovoltaique;
+    Piece zone_panneaux_photovoltaique;
     Piece ascenseur_toit;
     
 
@@ -129,19 +133,19 @@ public static Maison initialiser() {
     piece_Adjacent_SDB.add(salleMultiGaming);
     ArrayList<Objet> objets_SDB = new ArrayList<Objet>();
     //
-    Salle_de_bain = new AccesGarage("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
-    salleMultiGaming.ajouterPiece_Adj(Salle_de_bain);
+    salle_de_bain = new AccesGarage("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
+    salleMultiGaming.ajouterPiece_Adj(salle_de_bain);
 
     //pièce chambre
     LinkedList<Piece> piece_Adjacent_Chambre = new LinkedList<Piece>();
     piece_Adjacent_Chambre.add(salleMultiGaming);
-    piece_Adjacent_Chambre.add(Salle_de_bain);
+    piece_Adjacent_Chambre.add(salle_de_bain);
     piece_Adjacent_Chambre.add(sejour);
     ArrayList<Objet> objets_chambre = new ArrayList<Objet>();
     //
     chambre = new AccesGarage("Salle_de_bain",piece_Adjacent_Chambre,objets_chambre);
     salleMultiGaming.ajouterPiece_Adj(chambre);
-    Salle_de_bain.ajouterPiece_Adj(chambre);
+    salle_de_bain.ajouterPiece_Adj(chambre);
     sejour.ajouterPiece_Adj(chambre);
 
     //pièce bureau
@@ -176,32 +180,26 @@ public static Maison initialiser() {
     return maMaison;
 
     /************-----------------DEBUT--1er-ETAGE--------------------------------********/
-    import pieces.ChambreEnfant1;
-    import pieces.ChambreEnfant2;
-    import pieces.ChambreAmis1;
-    import pieces.ChambreAmis2;
-    import pieces.Buanderie;
-    import pieces.Salon;
-    import pieces.SalleDeBain;
+    
     //chambre enfant n°1
     LinkedList<Piece> piece_adjacent_ChambreEnfant1= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreEnfant1 = new ArrayList<Objet>();
-    chambreEnfant1 = new ChambreEnfant1("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
+    chambre_enfant_1 = new Chambre("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
 
     //chambre enfant n°2
     LinkedList<Piece> piece_adjacent_ChambreEnfant2= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreEnfant2 = new ArrayList<Objet>();
-    chambreEnfant2 = new ChambreEnfant2("Chambre enfant 2",piece_adjacent_ChambreEnfant2,objets_ChambreEnfant2);
+    chambre_enfant_2 = new Chambre("Chambre enfant 2",piece_adjacent_ChambreEnfant2,objets_ChambreEnfant2);
 
     //chambre amis n°1
     LinkedList<Piece> piece_adjacent_ChambreAmis1= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreAmis1 = new ArrayList<Objet>();
-    chambreAmis1 = new ChambreAmis1("Chambre amis 1",piece_adjacent_ChambreAmis1,objets_ChambreAmis1);
+    chambre_amis_1 = new Chambre("Chambre amis 1",piece_adjacent_ChambreAmis1,objets_ChambreAmis1);
 
     //chambre amis n°2
     LinkedList<Piece> piece_adjacent_ChambreAmis2= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreAmis2 = new ArrayList<Objet>();
-    chambreAmis2 = new ChambreAmis2("Chambre amis 2",piece_adjacent_ChambreAmis2,objets_ChambreAmis2);
+    chambre_amis_2 = new Chambre("Chambre amis 2",piece_adjacent_ChambreAmis2,objets_ChambreAmis2);
 
     //buanderie
     LinkedList<Piece> piece_adjacent_Buanderie= new LinkedList<Piece>();
@@ -216,7 +214,7 @@ public static Maison initialiser() {
     //salle de bain
     LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
-    salleDeBain = new SalleDeBain("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
+    salle_de_bain = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
 
     /************-----------------FIN-1er-ETAGE--------------------------------********/
 
