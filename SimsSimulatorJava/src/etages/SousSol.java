@@ -1,8 +1,8 @@
-package SimsSimulatorJava.src.etages;
+package etages;
 
 import java.util.LinkedList;
 
-import SimsSimulatorJava.src.pieces.*;
+import pieces.Piece;
 
 public class SousSol extends Etage{
     

@@ -1,9 +1,9 @@
-package SimsSimulatorJava.src.pieces;
-
-import SimsSimulatorJava.src.objets.*;
+package pieces;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import objets.Objet;
 
 public abstract class Piece {
     // Attributs de la Pièce

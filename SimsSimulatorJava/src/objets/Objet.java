@@ -1,4 +1,4 @@
-package SimsSimulatorJava.src.objets;
+package objets;
 
 
 import java.util.List;

@@ -1,9 +1,9 @@
-package SimsSimulatorJava.src.pieces;
+package pieces;
 
-import SimsSimulatorJava.src.objets.*;
-
-import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import objets.Objet;
 
 public class Chambre extends Piece{
 
