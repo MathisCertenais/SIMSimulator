@@ -9,13 +9,17 @@ import pieces.AccesGarage;
 import pieces.Buanderie;
 import pieces.Chambre;
 import pieces.Cuisine;
+import pieces.EmplacementVehiculeAerien;
+import pieces.EntrepotColis;
 import pieces.Exterieur;
 import pieces.HomeCinema;
 import pieces.Piece;
+import pieces.PotagerHydroponique;
 import pieces.SDB;
 import pieces.SalleMultiGaming;
 import pieces.Salon;
 import pieces.Sejour;
+import pieces.ZonePanneauPhotovoltaique;
 
 public class Initialisation {
 
@@ -214,23 +218,34 @@ public static Maison initialiser() {
     //emplacement vehicule aerien
     LinkedList<Piece> piece_adjacent_EmplacementVehiculeAerien= new LinkedList<Piece>();
     ArrayList<Objet> objets_EmplacementVehiculeAerien = new ArrayList<Objet>();
-    emplacementVehiculeAerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
+    emplacement_véhicule_aerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
 
     //potager hydroponique
     LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
+    piece_adjacent_PotagerHydroponique.add(emplacement_véhicule_aerien);
     ArrayList<Objet> objets_PotagerHydroponique = new ArrayList<Objet>();
-    potagerHydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
+    potager_hydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
+    emplacement_véhicule_aerien.ajouterPiece_Adj(potager_hydroponique);
 
     //entrepot colis
     LinkedList<Piece> piece_adjacent_EntrepotColis= new LinkedList<Piece>();
+    piece_adjacent_EntrepotColis.add(emplacement_véhicule_aerien);
+    piece_adjacent_EntrepotColis.add(potager_hydroponique);
     ArrayList<Objet> objets_EntrepotColis = new ArrayList<Objet>();
-    entrepotColis = new EntrepotColis("Entrepot colis",piece_adjacent_EntrepotColis,objets_EntrepotColis);
+    entrepos_colis = new EntrepotColis("Entrepot colis",piece_adjacent_EntrepotColis,objets_EntrepotColis);
+    emplacement_véhicule_aerien.ajouterPiece_Adj(entrepos_colis);
+    potager_hydroponique.ajouterPiece_Adj(entrepos_colis);
 
     //zone panneau photovoltaique
     LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
+    piece_adjacent_ZonePanneauPhotovoltaique.add(emplacement_véhicule_aerien);
+    piece_adjacent_ZonePanneauPhotovoltaique.add(potager_hydroponique);
+    piece_adjacent_ZonePanneauPhotovoltaique.add(entrepos_colis);
     ArrayList<Objet> objets_ZonePanneauPhotovoltaique = new ArrayList<Objet>();
-    zonePanneauPhotovoltaique = new ZonePanneauPhotovoltaique("Zone panneau photovoltaique",piece_adjacent_ZonePanneauPhotovoltaique,objets_ZonePanneauPhotovoltaique);
-
+    zone_panneaux_photovoltaique = new ZonePanneauPhotovoltaique("Zone panneau photovoltaique",piece_adjacent_ZonePanneauPhotovoltaique,objets_ZonePanneauPhotovoltaique);
+    emplacement_véhicule_aerien.ajouterPiece_Adj(zone_panneaux_photovoltaique);
+    potager_hydroponique.ajouterPiece_Adj(zone_panneaux_photovoltaique);
+    entrepos_colis.ajouterPiece_Adj(zone_panneaux_photovoltaique);
 
     /************-----------------FIN--TOIT---------------------------------------********/
 
