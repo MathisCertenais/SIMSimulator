@@ -8,7 +8,7 @@ public abstract class Objet{
     //attributs
     private String nom;
     private String etat;
-    private List<String> actions = new LinkedList<String>();
+    private LinkedList<String> actions = new LinkedList<String>();
 
     public Objet(String nom, String etat, LinkedList<String> actions){
         this.nom = nom;
@@ -22,7 +22,7 @@ public abstract class Objet{
     public String getEtat(){
         return this.etat;
     }
-    public List<String> getAction(){
+    public LinkedList<String> getAction(){
         return this.actions;
     }
 
