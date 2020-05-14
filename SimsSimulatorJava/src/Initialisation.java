@@ -1,13 +1,16 @@
 
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import etages.Etage;
 import etages.RDC;
 import objets.Objet;
+import pieces.AccesGarage;
+import pieces.Cuisine;
 import pieces.Exterieur;
+import pieces.HomeCinema;
 import pieces.Piece;
+import pieces.SalleMultiGaming;
 import pieces.Sejour;
 
 public class Initialisation {
@@ -57,36 +60,101 @@ public static Maison initialiser() {
 
     /************-------------------REZ-DE-CHAUSSEE---------------------------********/
     // pièce séjour
-    LinkedList<Piece> piece_Ajacent_sejour= new LinkedList<Piece>();
-    ArrayList<Objet> objets_exterieur_sejour = new ArrayList<Objet>();
+    LinkedList<Piece> piece_Adjacent_sejour= new LinkedList<Piece>();
+    ArrayList<Objet> objets_sejour = new ArrayList<Objet>();
     //objets_exterieur_sejour.add(camera);
-    sejour = new Sejour("Sejour",piece_Ajacent_sejour,objets_exterieur_sejour);
+    sejour = new Sejour("Sejour",piece_Adjacent_sejour,objets_sejour);
 
     // pièce extérieure
-    LinkedList<Piece> piece_Ajacent_exterieurAccueil = new LinkedList<Piece>();
-    piece_Ajacent_exterieurAccueil.add(sejour);
+    LinkedList<Piece> piece_Adjacent_exterieurAccueil = new LinkedList<Piece>();
+    piece_Adjacent_exterieurAccueil.add(sejour);
     ArrayList<Objet> objets_exterieurAccueil = new ArrayList<Objet>();
     //objets_exterieurAccueil.add(camera);
     //objets_exterieurAccueil.add(lecteur_empreinte);
     //objets_exterieurAccueil.add(sonnette);
-    exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
+    exterieurAccueil = new Exterieur("Exterieur",piece_Adjacent_exterieurAccueil,objets_exterieurAccueil);
     sejour.ajouterPiece_Adj(exterieurAccueil);
     
     // pièce cuisine
-    LinkedList<Piece> piece_Ajacent_exterieurAccueil = new LinkedList<Piece>();
-    piece_Ajacent_exterieurAccueil.add(sejour);
-    ArrayList<Objet> objets_ = new ArrayList<Objet>();
+    LinkedList<Piece> piece_Adjacent_cuisine = new LinkedList<Piece>();
+    piece_Adjacent_cuisine.add(sejour);
+    ArrayList<Objet> objets_cuisine = new ArrayList<Objet>();
     //
-    exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
-    sejour.ajouterPiece_Adj(exterieurAccueil);
+    cuisine = new Cuisine("Cuisine",piece_Adjacent_cuisine,objets_cuisine);
+    sejour.ajouterPiece_Adj(cuisine);
 
+    //pièce home cinéma 
+    LinkedList<Piece> piece_Adjacent_homeCinema = new LinkedList<Piece>();
+    piece_Adjacent_homeCinema.add(sejour);
+    piece_Adjacent_homeCinema.add(cuisine);
+    ArrayList<Objet> objets_homeCinema = new ArrayList<Objet>();
+    //
+    homeCinema = new HomeCinema("Home_Cinema",piece_Adjacent_homeCinema,objets_homeCinema);
+    cuisine.ajouterPiece_Adj(homeCinema);
+    sejour.ajouterPiece_Adj(homeCinema);
 
+    //pièce acces garage 
+    LinkedList<Piece> piece_Adjacent_acces_garage = new LinkedList<Piece>();
+    piece_Adjacent_acces_garage.add(sejour);
+    piece_Adjacent_acces_garage.add(cuisine);
+    //piece_Adjacent_acces_garage.add(exterieurAccueil);
+    ArrayList<Objet> objets_acces_garage = new ArrayList<Objet>();
+    //
+    accesGarage = new AccesGarage("Acces_Garage",piece_Adjacent_acces_garage,objets_acces_garage);
+    cuisine.ajouterPiece_Adj(accesGarage);
+    sejour.ajouterPiece_Adj(accesGarage);
 
+    //pièce multi-gaming 
+    LinkedList<Piece> piece_Adjacent_multi_gaming = new LinkedList<Piece>();
+    piece_Adjacent_multi_gaming.add(homeCinema);
+    piece_Adjacent_multi_gaming.add(sejour);
+    ArrayList<Objet> objets_multi_gaming = new ArrayList<Objet>();
+    //
+    salleMultiGaming = new SalleMultiGaming("Salle_multi_gaming",piece_Adjacent_multi_gaming,objets_multi_gaming);
+    homeCinema.ajouterPiece_Adj(salleMultiGaming);
+    sejour.ajouterPiece_Adj(salleMultiGaming);
 
+    //pièce toilette 
+    LinkedList<Piece> piece_Adjacent_toilette = new LinkedList<Piece>();
+    piece_Adjacent_toilette.add(salleMultiGaming);
+    piece_Adjacent_toilette.add(sejour);
+    ArrayList<Objet> objets_toilette = new ArrayList<Objet>();
+    //
+    toilette = new AccesGarage("toilette",piece_Adjacent_toilette,objets_toilette);
+    salleMultiGaming.ajouterPiece_Adj(toilette);
+    sejour.ajouterPiece_Adj(toilette);  
 
+    //pièce Salle de bain
+    LinkedList<Piece> piece_Adjacent_SDB = new LinkedList<Piece>();
+    piece_Adjacent_SDB.add(salleMultiGaming);
+    ArrayList<Objet> objets_SDB = new ArrayList<Objet>();
+    //
+    Salle_de_bain = new AccesGarage("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
+    salleMultiGaming.ajouterPiece_Adj(Salle_de_bain);
 
+    //pièce chambre
+    LinkedList<Piece> piece_Adjacent_Chambre = new LinkedList<Piece>();
+    piece_Adjacent_Chambre.add(salleMultiGaming);
+    piece_Adjacent_Chambre.add(Salle_de_bain);
+    piece_Adjacent_Chambre.add(sejour);
+    ArrayList<Objet> objets_chambre = new ArrayList<Objet>();
+    //
+    chambre = new AccesGarage("Salle_de_bain",piece_Adjacent_Chambre,objets_chambre);
+    salleMultiGaming.ajouterPiece_Adj(chambre);
+    Salle_de_bain.ajouterPiece_Adj(chambre);
+    sejour.ajouterPiece_Adj(chambre);
 
+    //pièce bureau
+    LinkedList<Piece> piece_Adjacent_bureau = new LinkedList<Piece>();
+    piece_Adjacent_bureau.add(chambre);
+    piece_Adjacent_bureau.add(sejour);
+    ArrayList<Objet> objets_bureau = new ArrayList<Objet>();
+    //
+    bureau = new AccesGarage("Salle_de_bain",piece_Adjacent_bureau,objets_bureau);
+    chambre.ajouterPiece_Adj(sejour);
+    sejour.ajouterPiece_Adj(sejour);
 
+    /************-----------------FIN--REZ-DE-CHAUSSEE---------------------------********/
 
 
      //liste pièce rez_de_chaussee
@@ -106,6 +174,53 @@ public static Maison initialiser() {
      maMaison.setPiece(exterieurAccueil);
 
     return maMaison;
+
+    /************-----------------DEBUT--1er-ETAGE--------------------------------********/
+    import pieces.ChambreEnfant1;
+    import pieces.ChambreEnfant2;
+    import pieces.ChambreAmis1;
+    import pieces.ChambreAmis2;
+    import pieces.Buanderie;
+    import pieces.Salon;
+    import pieces.SalleDeBain;
+    //chambre enfant n°1
+    LinkedList<Piece> piece_adjacent_ChambreEnfant1= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreEnfant1 = new ArrayList<Objet>();
+    chambreEnfant1 = new ChambreEnfant1("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
+
+    //chambre enfant n°2
+    LinkedList<Piece> piece_adjacent_ChambreEnfant2= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreEnfant2 = new ArrayList<Objet>();
+    chambreEnfant2 = new ChambreEnfant2("Chambre enfant 2",piece_adjacent_ChambreEnfant2,objets_ChambreEnfant2);
+
+    //chambre amis n°1
+    LinkedList<Piece> piece_adjacent_ChambreAmis1= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreAmis1 = new ArrayList<Objet>();
+    chambreAmis1 = new ChambreAmis1("Chambre amis 1",piece_adjacent_ChambreAmis1,objets_ChambreAmis1);
+
+    //chambre amis n°2
+    LinkedList<Piece> piece_adjacent_ChambreAmis2= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreAmis2 = new ArrayList<Objet>();
+    chambreAmis2 = new ChambreAmis2("Chambre amis 2",piece_adjacent_ChambreAmis2,objets_ChambreAmis2);
+
+    //buanderie
+    LinkedList<Piece> piece_adjacent_Buanderie= new LinkedList<Piece>();
+    ArrayList<Objet> objets_Buanderie = new ArrayList<Objet>();
+    buanderie = new Buanderie("Buanderie",piece_adjacent_Buanderie,objets_Buanderie);
+
+    //salon
+    LinkedList<Piece> piece_adjacent_Salon= new LinkedList<Piece>();
+    ArrayList<Objet> objets_Salon = new ArrayList<Objet>();
+    salon = new Salon("Salon",piece_adjacent_Salon,objets_Salon);
+
+    //salle de bain
+    LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
+    ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
+    salleDeBain = new SalleDeBain("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
+
+    /************-----------------FIN-1er-ETAGE--------------------------------********/
+
+
 }
 
 
