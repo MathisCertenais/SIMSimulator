@@ -20,8 +20,42 @@ public static Maison initialiser() {
     Objet lecteur_empreinte;
     Objet sonnette;
 
-    Piece sejour;
+    //Objet pièce sous-sol
+    Piece emplacement_voitures;
+    Piece ascenseur_vehicule;
+    Piece ascenseur_sous_sol;
+    Piece serveur;
+    Piece cave_a_vin;
+    //Objet pièce rez-de-chaussee
     Piece exterieurAccueil;
+    Piece sejour;
+    Piece accesGarage;
+    Piece cuisine;
+    Piece homeCinema;
+    Piece salleMultiGaming;
+    Piece bureau;
+    Piece chambre;
+    Piece Salle_de_bain; 
+    Piece toilette;
+    Piece ascenseur_rdc;
+    //Objet pièce 1er étage
+    Piece chambre_enfant_1;
+    Piece chambre_enfant_2;
+    Piece salon;
+    Piece chambre_amis_1;
+    Piece chambre_amis_2;
+    Piece buanderie;
+    Piece SDB_Etage;
+    Piece ascenseur_1etage;
+    //Objet pièce toit
+    Piece emplacement_véhicule_aerien;
+    Piece potager_hydroponique;
+    Piece entrepos_colis;
+    Piece panneaux_photovoltaique;
+    Piece ascenseur_toit;
+    
+
+    /************-------------------REZ-DE-CHAUSSEE---------------------------********/
     // pièce séjour
     LinkedList<Piece> piece_Ajacent_sejour= new LinkedList<Piece>();
     ArrayList<Objet> objets_exterieur_sejour = new ArrayList<Objet>();
@@ -38,6 +72,22 @@ public static Maison initialiser() {
     exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
     sejour.ajouterPiece_Adj(exterieurAccueil);
     
+    // pièce cuisine
+    LinkedList<Piece> piece_Ajacent_exterieurAccueil = new LinkedList<Piece>();
+    piece_Ajacent_exterieurAccueil.add(sejour);
+    ArrayList<Objet> objets_ = new ArrayList<Objet>();
+    //
+    exterieurAccueil = new Exterieur("Exterieur",piece_Ajacent_exterieurAccueil,objets_exterieurAccueil);
+    sejour.ajouterPiece_Adj(exterieurAccueil);
+
+
+
+
+
+
+
+
+
 
      //liste pièce rez_de_chaussee
      LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
