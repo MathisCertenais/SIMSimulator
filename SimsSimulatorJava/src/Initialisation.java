@@ -160,29 +160,10 @@ public static Maison initialiser() {
 
     /************-----------------FIN--REZ-DE-CHAUSSEE---------------------------********/
 
-
-     //liste pièce rez_de_chaussee
-     LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
-     pieces_rdc.add(sejour);
-     pieces_rdc.add(sejour);
-
-     //Etage rez_de_chaussee
-     Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
-    
-     //Liste étage 
-     LinkedList<Etage> liste_etages = new LinkedList<Etage>();
-     liste_etages.add(rdc);
-
-     Maison maMaison = new Maison(liste_etages);
-     maMaison.setEtage(rdc);
-     maMaison.setPiece(exterieurAccueil);
-
-    return maMaison;
-
     /************-----------------DEBUT--1er-ETAGE--------------------------------********/
     
     //chambre enfant n°1
-    LinkedList<Piece> piece_adjacent_ChambreEnfant1= new LinkedList<Piece>();
+    LinkedList<Piece> piece_adjacent_ChambreEnfant1 = new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreEnfant1 = new ArrayList<Objet>();
     chambre_enfant_1 = new Chambre("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
 
@@ -208,23 +189,27 @@ public static Maison initialiser() {
 
     //salon
     LinkedList<Piece> piece_adjacent_Salon= new LinkedList<Piece>();
+    piece_adjacent_Salon.add(chambre_enfant_1);
+    piece_adjacent_Salon.add(chambre_enfant_2);
+    piece_adjacent_Salon.add(chambre_amis_1);
+    piece_adjacent_Salon.add(chambre_amis_2);
+    piece_adjacent_Salon.add(buanderie);
     ArrayList<Objet> objets_Salon = new ArrayList<Objet>();
     salon = new Salon("Salon",piece_adjacent_Salon,objets_Salon);
-
+    chambre_enfant_1.ajouterPiece_Adj(salon);
+    chambre_enfant_2.ajouterPiece_Adj(salon);
+    chambre_amis_1.ajouterPiece_Adj(salon);
+    chambre_amis_2.ajouterPiece_Adj(salon);
+    buanderie.ajouterPiece_Adj(salon);
+    
     //salle de bain
     LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
+    piece_adjacent_SalleDeBain.add(salon);
     ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
     salle_de_bain = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
-
-    /************-----------------FIN-1er-ETAGE--------------------------------********/
-
+    salon.ajouterPiece_Adj(salle_de_bain);
 
     /************-----------------DEBUT--TOIT-------------------------------------********/
-
-    /**import pieces.EmplacementVehiculeAerien;
-    import pieces.PotagerHydroponique;
-    import pieces.EntrepotColis;
-    import pieces.ZonePanneauPhotovoltaique;**/
 
     //emplacement vehicule aerien
     LinkedList<Piece> piece_adjacent_EmplacementVehiculeAerien= new LinkedList<Piece>();
@@ -248,8 +233,6 @@ public static Maison initialiser() {
 
 
     /************-----------------FIN--TOIT---------------------------------------********/
-
-
 
     /************-----------------DEBUT--SOUS-SOL---------------------------------********/
 
@@ -280,6 +263,27 @@ public static Maison initialiser() {
 
     
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
+
+
+      //liste pièce rez_de_chaussee
+      LinkedList<Piece> pieces_rdc = new LinkedList<Piece>();
+      pieces_rdc.add(sejour);
+      pieces_rdc.add(exterieurAccueil);
+ 
+      //Etage rez_de_chaussee
+      Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
+     
+      //Liste étage 
+      LinkedList<Etage> liste_etages = new LinkedList<Etage>();
+      liste_etages.add(rdc);
+ 
+      Maison maMaison = new Maison(liste_etages);
+      maMaison.setEtage(rdc);
+      maMaison.setPiece(exterieurAccueil);
+ 
+     return maMaison;
+
+
 }
 
 
