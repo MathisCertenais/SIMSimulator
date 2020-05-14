@@ -4,8 +4,8 @@ import java.util.LinkedList;
 
 public class PhilipsHue extends Objet {
     
-    public PhilipsHue(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public PhilipsHue(){
+       super("Ampoule PhilipsHue", "éteinte");
        actions.add("Allumer l'ampoule Philips Hue");    //Ajout des Actions de Bases de l'ampoule Philips Hue
        actions.add("Eteindre l'ampoule Philips Hue");
     }
@@ -13,8 +13,26 @@ public class PhilipsHue extends Objet {
     @Override
     public String realiserAction(int c) {
         if(c == 0){
-            
+            if(this.etat == "allumé"){
+                System.out.println("L'ampoule est déjà allumé");
+            }
+            else {
+                this.etat = "allumé";
+                System.out.println("L'ampoule s'allume");
+            }
         }
-        return("Il ne se passe rien");
+        else if(c == 1){
+            if(this.etat == "éteinte"){
+                System.out.println("L'ampoule est déjà éteinte");
+            }
+            else {
+                this.etat = "éteinte";
+                System.out.println("L'ampoule s'éteint");
+            }
+        }
+        else {
+            return("Il ne se passe rien"); 
+        }
+        
     }
 }

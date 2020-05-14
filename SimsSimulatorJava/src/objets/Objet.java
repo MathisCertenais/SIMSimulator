@@ -6,13 +6,14 @@ import java.util.LinkedList;
 
 public abstract class Objet{
     //attributs
-    private String nom;
-    private String etat;
-    private LinkedList<String> actions = new LinkedList<String>();
+    protected String nom;
+    protected String etat;
+    protected LinkedList<String> actions;
 
     public Objet(String nom, String etat){
         this.nom = nom;
         this.etat = etat;
+        this.actions = new LinkedList<String>();
     }
 
     public String getNom(){
