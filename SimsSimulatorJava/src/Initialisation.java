@@ -174,6 +174,53 @@ public static Maison initialiser() {
      maMaison.setPiece(exterieurAccueil);
 
     return maMaison;
+
+    /************-----------------DEBUT--1er-ETAGE--------------------------------********/
+    import pieces.ChambreEnfant1;
+    import pieces.ChambreEnfant2;
+    import pieces.ChambreAmis1;
+    import pieces.ChambreAmis2;
+    import pieces.Buanderie;
+    import pieces.Salon;
+    import pieces.SalleDeBain;
+    //chambre enfant n°1
+    LinkedList<Piece> piece_adjacent_ChambreEnfant1= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreEnfant1 = new ArrayList<Objet>();
+    chambreEnfant1 = new ChambreEnfant1("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
+
+    //chambre enfant n°2
+    LinkedList<Piece> piece_adjacent_ChambreEnfant2= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreEnfant2 = new ArrayList<Objet>();
+    chambreEnfant2 = new ChambreEnfant2("Chambre enfant 2",piece_adjacent_ChambreEnfant2,objets_ChambreEnfant2);
+
+    //chambre amis n°1
+    LinkedList<Piece> piece_adjacent_ChambreAmis1= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreAmis1 = new ArrayList<Objet>();
+    chambreAmis1 = new ChambreAmis1("Chambre amis 1",piece_adjacent_ChambreAmis1,objets_ChambreAmis1);
+
+    //chambre amis n°2
+    LinkedList<Piece> piece_adjacent_ChambreAmis2= new LinkedList<Piece>();
+    ArrayList<Objet> objets_ChambreAmis2 = new ArrayList<Objet>();
+    chambreAmis2 = new ChambreAmis2("Chambre amis 2",piece_adjacent_ChambreAmis2,objets_ChambreAmis2);
+
+    //buanderie
+    LinkedList<Piece> piece_adjacent_Buanderie= new LinkedList<Piece>();
+    ArrayList<Objet> objets_Buanderie = new ArrayList<Objet>();
+    buanderie = new Buanderie("Buanderie",piece_adjacent_Buanderie,objets_Buanderie);
+
+    //salon
+    LinkedList<Piece> piece_adjacent_Salon= new LinkedList<Piece>();
+    ArrayList<Objet> objets_Salon = new ArrayList<Objet>();
+    salon = new Salon("Salon",piece_adjacent_Salon,objets_Salon);
+
+    //salle de bain
+    LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
+    ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
+    salleDeBain = new SalleDeBain("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
+
+    /************-----------------FIN-1er-ETAGE--------------------------------********/
+
+
 }
 
 
