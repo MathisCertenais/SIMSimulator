@@ -26,7 +26,6 @@ public abstract class Objet{
         return this.actions;
     }
 
-    public String realiserAction(int c){
-        return "Il ne se passe rien";
+    public void realiserAction(int c){
     }
 }

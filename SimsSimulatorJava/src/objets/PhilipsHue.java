@@ -11,7 +11,7 @@ public class PhilipsHue extends Objet {
     }
 
     @Override
-    public String realiserAction(int c) {
+    public void realiserAction(int c) {
         if(c == 0){
             if(this.etat == "allumé"){
                 System.out.println("L'ampoule est déjà allumé");
@@ -31,7 +31,7 @@ public class PhilipsHue extends Objet {
             }
         }
         else {
-            return("Il ne se passe rien"); 
+            System.out.println("Il ne se passe rien"); 
         }
         
     }
