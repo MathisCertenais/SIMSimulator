@@ -262,26 +262,52 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_adjacent_ChambreEnfant1 = new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreEnfant1 = new ArrayList<Objet>();
     chambre_enfant_1 = new Chambre("Chambre enfant 1",piece_adjacent_ChambreEnfant1,objets_ChambreEnfant1);
+    objets_ChambreEnfant1.add(philipsHue);
+    objets_ChambreEnfant1.add(cameraSurveillance);
+    objets_ChambreEnfant1.add(storeConnecte);
+    objets_ChambreEnfant1.add(pompeAchaleur);
 
     //chambre enfant n°2
     LinkedList<Piece> piece_adjacent_ChambreEnfant2= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreEnfant2 = new ArrayList<Objet>();
     chambre_enfant_2 = new Chambre("Chambre enfant 2",piece_adjacent_ChambreEnfant2,objets_ChambreEnfant2);
+    objets_ChambreEnfant2.add(philipsHue);
+    objets_ChambreEnfant2.add(cameraSurveillance);
+    objets_ChambreEnfant2.add(storeConnecte);
+    objets_ChambreEnfant2.add(pompeAchaleur);
 
     //chambre amis n°1
     LinkedList<Piece> piece_adjacent_ChambreAmis1= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreAmis1 = new ArrayList<Objet>();
     chambre_amis_1 = new Chambre("Chambre amis 1",piece_adjacent_ChambreAmis1,objets_ChambreAmis1);
+    objets_ChambreAmis1.add(philipsHue);
+    objets_ChambreAmis1.add(cameraSurveillance);
+    objets_ChambreAmis1.add(storeConnecte);
+    objets_ChambreAmis1.add(pompeAchaleur);
 
     //chambre amis n°2
     LinkedList<Piece> piece_adjacent_ChambreAmis2= new LinkedList<Piece>();
     ArrayList<Objet> objets_ChambreAmis2 = new ArrayList<Objet>();
     chambre_amis_2 = new Chambre("Chambre amis 2",piece_adjacent_ChambreAmis2,objets_ChambreAmis2);
+    objets_ChambreAmis2.add(philipsHue);
+    objets_ChambreAmis2.add(cameraSurveillance);
+    objets_ChambreAmis2.add(storeConnecte);
+    objets_ChambreAmis2.add(pompeAchaleur);
+    objets_ChambreAmis2.add(cadreConnecte);
 
     //buanderie
     LinkedList<Piece> piece_adjacent_Buanderie= new LinkedList<Piece>();
     ArrayList<Objet> objets_Buanderie = new ArrayList<Objet>();
     buanderie = new Buanderie("Buanderie",piece_adjacent_Buanderie,objets_Buanderie);
+    objets_Buanderie.add(philipsHue);
+    objets_Buanderie.add(cameraSurveillance);
+    objets_Buanderie.add(lavelinge);
+    objets_Buanderie.add(pompeAchaleur);
+    objets_Buanderie.add(secheLinge);
+    objets_Buanderie.add(storeConnecte);
+    objets_Buanderie.add(fenetre);
+    objets_Buanderie.add(ferArepasser);
+    
 
     //salon
     LinkedList<Piece> piece_adjacent_Salon= new LinkedList<Piece>();
@@ -297,13 +323,26 @@ public static Maison initialiser() {
     chambre_amis_1.ajouterPiece_Adj(salon);
     chambre_amis_2.ajouterPiece_Adj(salon);
     buanderie.ajouterPiece_Adj(salon);
-    
+    objets_Salon.add(philipsHue);
+    objets_Salon.add(cameraSurveillance);
+    objets_Salon.add(canape);
+    objets_Salon.add(cadreConnecte);
+    objets_Salon.add(pompeAchaleur);
+    objets_Salon.add(storeConnecte);
+
     //salle de bain
     LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
     piece_adjacent_SalleDeBain.add(salon);
     ArrayList<Objet> objets_SalleDeBain = new ArrayList<Objet>();
     sdb_Etage = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
     salon.ajouterPiece_Adj(sdb_Etage);
+    objets_SalleDeBain.add(philipsHue);
+    objets_SalleDeBain.add(cameraSurveillance);
+    objets_SalleDeBain.add(mirroirConnecte);
+    objets_SalleDeBain.add(douche);
+    objets_SalleDeBain.add(pompeAchaleur);
+    objets_SalleDeBain.add(storeConnecte);
+    objets_SalleDeBain.add(fenetre);
 
     //pièce ascenseur 1er etage
     LinkedList<Piece> piece_Adjacent_ascenseur_1erEtage = new LinkedList<Piece>();
@@ -319,8 +358,8 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_adjacent_EmplacementVehiculeAerien= new LinkedList<Piece>();
     ArrayList<Objet> objets_EmplacementVehiculeAerien = new ArrayList<Objet>();
     emplacement_véhicule_aerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
+    objets_EmplacementVehiculeAerien.add(philipsHue);
+    objets_EmplacementVehiculeAerien.add(cameraSurveillance);
 
     //potager hydroponique
     LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
@@ -328,12 +367,12 @@ public static Maison initialiser() {
     ArrayList<Objet> objets_PotagerHydroponique = new ArrayList<Objet>();
     potager_hydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
     emplacement_véhicule_aerien.ajouterPiece_Adj(potager_hydroponique);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
-    objets_sejour.add(sondeTemperature);
-    objets_sejour.add(sondeHumidite);
-    objets_sejour.add(portailConnecte);
-    objets_sejour.add(robotTracteur);
+    objets_PotagerHydroponique.add(philipsHue);
+    objets_PotagerHydroponique.add(cameraSurveillance);
+    objets_PotagerHydroponique.add(sondeTemperature);
+    objets_PotagerHydroponique.add(sondeHumidite);
+    objets_PotagerHydroponique.add(portailConnecte);
+    objets_PotagerHydroponique.add(robotTracteur);
 
     //entrepot colis
     LinkedList<Piece> piece_adjacent_EntrepotColis= new LinkedList<Piece>();
@@ -343,10 +382,10 @@ public static Maison initialiser() {
     entrepos_colis = new EntrepotColis("Entrepot colis",piece_adjacent_EntrepotColis,objets_EntrepotColis);
     emplacement_véhicule_aerien.ajouterPiece_Adj(entrepos_colis);
     potager_hydroponique.ajouterPiece_Adj(entrepos_colis);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
-    objets_sejour.add(robotRangement);
-    objets_sejour.add(pompeAChaleur);
+    objets_EntrepotColis.add(philipsHue);
+    objets_EntrepotColis.add(cameraSurveillance);
+    objets_EntrepotColis.add(robotRangement);
+    objets_EntrepotColis.add(pompeAChaleur);
 
     //zone panneau photovoltaique
     LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
@@ -358,8 +397,8 @@ public static Maison initialiser() {
     emplacement_véhicule_aerien.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     potager_hydroponique.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     entrepos_colis.ajouterPiece_Adj(zone_panneaux_photovoltaique);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
+    objets_ZonePanneauPhotovoltaique.add(philipsHue);
+    objets_ZonePanneauPhotovoltaique.add(cameraSurveillance);
 
     //pièce ascenseur toit
     LinkedList<Piece> piece_Adjacent_ascenseur_toit = new LinkedList<Piece>();
