@@ -1,11 +1,10 @@
 package objets;
 
-import java.util.LinkedList;
 
 public class CadreConnecte extends Objet {
     
-    public CadreConnecte(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public CadreConnecte(){
+       super("Cadre Connecte","actif");
        actions.add("Changer de photo");    //Ajout des Actions de Bases pour le cadre connecte
        actions.add("Regarder la photo");
     }

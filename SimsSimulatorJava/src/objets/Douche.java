@@ -1,11 +1,10 @@
 package objets;
 
-import java.util.LinkedList;
 
 public class Douche extends Objet {
     
-    public Douche(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public Douche(){
+       super("Douche","disponible");
        actions.add("Allumer l'eau");    //Ajout des Actions de Bases de la douche
        actions.add("Eteindre l'eau");
        actions.add("Augmenter la temperature");

@@ -1,12 +1,11 @@
 package objets;
 
-import java.util.LinkedList;
 import java.util.Random;
 
 public class CapteurTemperature extends Objet {
     
-    public CapteurTemperature(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public CapteurTemperature(){
+       super("Capteur de temperature","en place");
        actions.add("Obtenir la valeur du capteur");    //Ajout des Actions de Bases pour le capteur de temperature
     }
     
