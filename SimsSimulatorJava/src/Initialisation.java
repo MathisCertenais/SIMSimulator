@@ -319,6 +319,8 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_adjacent_EmplacementVehiculeAerien= new LinkedList<Piece>();
     ArrayList<Objet> objets_EmplacementVehiculeAerien = new ArrayList<Objet>();
     emplacement_véhicule_aerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
 
     //potager hydroponique
     LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
@@ -326,6 +328,12 @@ public static Maison initialiser() {
     ArrayList<Objet> objets_PotagerHydroponique = new ArrayList<Objet>();
     potager_hydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
     emplacement_véhicule_aerien.ajouterPiece_Adj(potager_hydroponique);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
+    objets_sejour.add(sondeTemperature);
+    objets_sejour.add(sondeHumidite);
+    objets_sejour.add(portailConnecte);
+    objets_sejour.add(robotTracteur);
 
     //entrepot colis
     LinkedList<Piece> piece_adjacent_EntrepotColis= new LinkedList<Piece>();
@@ -335,6 +343,10 @@ public static Maison initialiser() {
     entrepos_colis = new EntrepotColis("Entrepot colis",piece_adjacent_EntrepotColis,objets_EntrepotColis);
     emplacement_véhicule_aerien.ajouterPiece_Adj(entrepos_colis);
     potager_hydroponique.ajouterPiece_Adj(entrepos_colis);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
+    objets_sejour.add(robotRangement);
+    objets_sejour.add(pompeAChaleur);
 
     //zone panneau photovoltaique
     LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
@@ -346,6 +358,8 @@ public static Maison initialiser() {
     emplacement_véhicule_aerien.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     potager_hydroponique.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     entrepos_colis.ajouterPiece_Adj(zone_panneaux_photovoltaique);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
 
     //pièce ascenseur toit
     LinkedList<Piece> piece_Adjacent_ascenseur_toit = new LinkedList<Piece>();
@@ -368,19 +382,31 @@ public static Maison initialiser() {
     ArrayList<Objet> objets_Garage = new ArrayList<Objet>();
     emplacement_voitures = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
     ascenseur_vehicule.ajouterPiece_Adj(emplacement_voitures);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
     salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
     emplacement_voitures.ajouterPiece_Adj(salle_serveur);
-
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
+    objets_sejour.add(capteurTemperature);
+    objets_sejour.add(pompeAChaleur);
+    
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
     ArrayList<Objet> objets_CaveAVin = new ArrayList<Objet>();
     cave_a_vin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
     salle_serveur.ajouterPiece_Adj(cave_a_vin);
     cave_a_vin.ajouterPiece_Adj(salle_serveur);
+    emplacement_voitures.ajouterPiece_Adj(salle_serveur);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
+    objets_sejour.add(capteurTemperature);
+    objets_sejour.add(capteurHumidite);
+    objets_sejour.add(pompeAChaleur);
 
     //pièce ascenseur sous_sol
     LinkedList<Piece> piece_Adjacent_ascenseur_sous_sol = new LinkedList<Piece>();
@@ -389,6 +415,7 @@ public static Maison initialiser() {
     //
     ascenseur_sous_sol = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_sous_sol,objets_ascenseur_sous_sol);
     salle_serveur.ajouterPiece_Adj(ascenseur_sous_sol);
+
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
 
 
