@@ -52,6 +52,13 @@ public static Maison initialiser() {
     Objet lavelinge = new LaveLinge();
     Objet microOnde = new MicroOnde();
     Objet mirroirConnecte = new MiroirConnecte();
+    Objet pc = new PC();
+    Objet philipsHue = new PhilipsHue();
+    Objet plaque = new Plaque();
+    Objet PlateformeVehicule = new PlateformeVehicule();
+    Objet pompeAchaleur = new PompeAChaleur();
+    Objet portailConnecte = new PortailConnecte();
+    Objet poubelle = new Poubelle();
     Objet robotRangement = new RobotRangement();
     Objet robotTracteur = new RobotTracteur();
     Objet secheLinge = new SecheLinge();
@@ -60,8 +67,6 @@ public static Maison initialiser() {
     Objet storeConnecte = new StoreConnecte();
     Objet tele = new Tele();
     Objet thermostat = new Thermostat();
-    Objet lecteur_empreinte;
-    Objet sonnette;
 
     //attributs pièce sous-sol
     Piece emplacement_voitures;
@@ -119,9 +124,6 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_exterieurAccueil = new LinkedList<Piece>();
     piece_Adjacent_exterieurAccueil.add(sejour);
     ArrayList<Objet> objets_exterieurAccueil = new ArrayList<Objet>();
-    //objets_exterieurAccueil.add(camera);
-    //objets_exterieurAccueil.add(lecteur_empreinte);
-    //objets_exterieurAccueil.add(sonnette);
     exterieurAccueil = new Exterieur("Exterieur",piece_Adjacent_exterieurAccueil,objets_exterieurAccueil);
     sejour.ajouterPiece_Adj(exterieurAccueil);
     
@@ -129,7 +131,17 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_cuisine = new LinkedList<Piece>();
     piece_Adjacent_cuisine.add(sejour);
     ArrayList<Objet> objets_cuisine = new ArrayList<Objet>();
-    //
+    objets_cuisine.add(philipsHue);
+    objets_cuisine.add(cameraSurveillance);
+    objets_cuisine.add(hotte);
+    objets_cuisine.add(frigo);
+    objets_cuisine.add(fenetre);
+    objets_cuisine.add(plaque);
+    objets_cuisine.add(pompeAchaleur);
+    objets_cuisine.add(four);
+    objets_cuisine.add(thermostat);
+    objets_cuisine.add(microOnde);
+    objets_cuisine.add(storeConnecte);
     cuisine = new Cuisine("Cuisine",piece_Adjacent_cuisine,objets_cuisine);
     sejour.ajouterPiece_Adj(cuisine);
 
@@ -138,7 +150,10 @@ public static Maison initialiser() {
     piece_Adjacent_homeCinema.add(sejour);
     piece_Adjacent_homeCinema.add(cuisine);
     ArrayList<Objet> objets_homeCinema = new ArrayList<Objet>();
-    //
+    objets_homeCinema.add(philipsHue);
+    objets_homeCinema.add(cameraSurveillance);
+    objets_homeCinema.add(tele);
+    objets_homeCinema.add(pompeAchaleur);
     homeCinema = new HomeCinema("Home_Cinema",piece_Adjacent_homeCinema,objets_homeCinema);
     cuisine.ajouterPiece_Adj(homeCinema);
     sejour.ajouterPiece_Adj(homeCinema);
@@ -147,19 +162,29 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_acces_garage = new LinkedList<Piece>();
     piece_Adjacent_acces_garage.add(sejour);
     piece_Adjacent_acces_garage.add(cuisine);
-    //piece_Adjacent_acces_garage.add(exterieurAccueil);
+    piece_Adjacent_acces_garage.add(exterieurAccueil);
     ArrayList<Objet> objets_acces_garage = new ArrayList<Objet>();
-    //
+    objets_acces_garage.add(philipsHue);
+    objets_acces_garage.add(cameraSurveillance);
+    objets_acces_garage.add(pompeAchaleur);
     accesGarage = new AccesGarage("Acces_Garage",piece_Adjacent_acces_garage,objets_acces_garage);
     cuisine.ajouterPiece_Adj(accesGarage);
     sejour.ajouterPiece_Adj(accesGarage);
+    exterieurAccueil.ajouterPiece_Adj(accesGarage);
 
     //pièce multi-gaming 
     LinkedList<Piece> piece_Adjacent_multi_gaming = new LinkedList<Piece>();
     piece_Adjacent_multi_gaming.add(homeCinema);
     piece_Adjacent_multi_gaming.add(sejour);
     ArrayList<Objet> objets_multi_gaming = new ArrayList<Objet>();
-    //
+    objets_multi_gaming.add(philipsHue);
+    objets_multi_gaming.add(cameraSurveillance);
+    objets_multi_gaming.add(tele);
+    objets_multi_gaming.add(storeConnecte);
+    objets_multi_gaming.add(fenetre);
+    objets_multi_gaming.add(enceinteConnecte);
+    objets_multi_gaming.add(pompeAchaleur);
+    objets_multi_gaming.add(pc);
     salleMultiGaming = new SalleMultiGaming("Salle_multi_gaming",piece_Adjacent_multi_gaming,objets_multi_gaming);
     homeCinema.ajouterPiece_Adj(salleMultiGaming);
     sejour.ajouterPiece_Adj(salleMultiGaming);
@@ -169,7 +194,9 @@ public static Maison initialiser() {
     piece_Adjacent_toilette.add(salleMultiGaming);
     piece_Adjacent_toilette.add(sejour);
     ArrayList<Objet> objets_toilette = new ArrayList<Objet>();
-    //
+    objets_toilette.add(philipsHue);
+    objets_toilette.add(cameraSurveillance);
+    objets_toilette.add(mirroirConnecte);
     toilette = new Toilette("toilette",piece_Adjacent_toilette,objets_toilette);
     salleMultiGaming.ajouterPiece_Adj(toilette);
     sejour.ajouterPiece_Adj(toilette);  
@@ -178,7 +205,13 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_SDB = new LinkedList<Piece>();
     piece_Adjacent_SDB.add(salleMultiGaming);
     ArrayList<Objet> objets_SDB = new ArrayList<Objet>();
-    //
+    objets_SDB.add(philipsHue);
+    objets_SDB.add(cameraSurveillance);
+    objets_SDB.add(storeConnecte);
+    objets_SDB.add(fenetre);
+    objets_SDB.add(pompeAchaleur);
+    objets_SDB.add(mirroirConnecte);
+    objets_SDB.add(lavelinge);
     salle_de_bain = new SDB("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
     salleMultiGaming.ajouterPiece_Adj(salle_de_bain);
 
@@ -188,7 +221,14 @@ public static Maison initialiser() {
     piece_Adjacent_Chambre.add(salle_de_bain);
     piece_Adjacent_Chambre.add(sejour);
     ArrayList<Objet> objets_chambre = new ArrayList<Objet>();
-    //
+    objets_chambre.add(philipsHue);
+    objets_chambre.add(cameraSurveillance);
+    objets_chambre.add(storeConnecte);
+    objets_chambre.add(tele);
+    objets_chambre.add(storeConnecte);
+    objets_chambre.add(fenetre);
+    objets_chambre.add(pompeAchaleur);
+    objets_chambre.add(mirroirConnecte);    
     chambre = new Chambre("Chambre",piece_Adjacent_Chambre,objets_chambre);
     salleMultiGaming.ajouterPiece_Adj(chambre);
     salle_de_bain.ajouterPiece_Adj(chambre);
@@ -199,7 +239,10 @@ public static Maison initialiser() {
     piece_Adjacent_bureau.add(chambre);
     piece_Adjacent_bureau.add(sejour);
     ArrayList<Objet> objets_bureau = new ArrayList<Objet>();
-    //
+    objets_bureau.add(philipsHue);
+    objets_bureau.add(cameraSurveillance);
+    objets_bureau.add(fenetre);
+    objets_bureau.add(pompeAchaleur);
     bureau = new Bureau("Bureau",piece_Adjacent_bureau,objets_bureau);
     chambre.ajouterPiece_Adj(bureau);
     sejour.ajouterPiece_Adj(bureau);
@@ -208,7 +251,6 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_ascenseur_rdc = new LinkedList<Piece>();
     piece_Adjacent_ascenseur_rdc.add(sejour);
     ArrayList<Objet> objets_ascenseur_rdc = new ArrayList<Objet>();
-    //
     ascenseur_rdc = new Ascenseur("Bureau",piece_Adjacent_ascenseur_rdc,objets_ascenseur_rdc);
     sejour.ajouterPiece_Adj(ascenseur_rdc);
 
