@@ -42,4 +42,8 @@ public class Maison {
     public Etage getEtage(){
         return memory_etage;
     }
+
+    public LinkedList<Etage> getAllEtage(){
+        return liste_etages;
+    }
 }

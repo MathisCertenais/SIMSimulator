@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import objets.Objet;
+import pieces.Ascenseur;
 import pieces.Piece;
 
 public class launcher {
@@ -22,6 +23,9 @@ public static void main(String[] args) {
         System.out.println("Vous pouvez :");
         System.out.println("1- Changer de piece");
         System.out.println("2- Inspecter un objet");
+        if(maison.getPiece() instanceof Ascenseur){
+            System.out.println("3- Changer d'étage");
+        }
         System.out.print("Tapez le chiffre correspondant à l'action : ");
         int idAction = scan.nextInt();
 
@@ -84,6 +88,24 @@ public static void main(String[] args) {
                 System.out.println("Erreur, le numéro ne correspond à aucun objet");
             }
 
+        }
+
+        //Changer d'etage
+        else if(idAction == 3 && maison.getPiece() instanceof Ascenseur){
+
+            //Affichage des etages
+            System.out.println("Liste des étages :");
+            for(int i=0; i<maison.getAllEtage().size(); i++){
+                System.out.println(i + "- " + maison.getAllEtage().get(i));
+            }
+            System.out.print("Tapez le chiffre correspondant à l'étage : ");
+            int idEtage = scan.nextInt();
+            if(idEtage > -1 && idEtage < maison.getAllEtage().size()){
+                maison.setEtage(maison.getAllEtage().get(idEtage));
+            }
+            else{
+                System.out.println("Erreur, le numéro ne correspond à aucune piece");
+            }
         }
     }
 }
