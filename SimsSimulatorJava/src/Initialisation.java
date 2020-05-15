@@ -7,7 +7,7 @@ import etages.Etage1;
 import etages.RDC;
 import etages.SousSol;
 import etages.Toit;
-import objets.Objet;
+import objets.*;
 import pieces.AccesGarage;
 import pieces.Ascenseur;
 import pieces.AscenseurVehicule;
@@ -35,10 +35,33 @@ public class Initialisation {
 
 public static Maison initialiser() {
     //objets de la maison
-   /* LinkedList<String> actions = new LinkedList<String>() ;
-    Objet camera ;
+   
+    Objet aspirateurAutonome = new AspirateurAutonome() ;
+    Objet cadreConnecte = new CadreConnecte();
+    Objet cameraSurveillance = new CameraSurveillance();
+    Objet canape = new Canape();
+    Objet capteurHumidite = new CapteurHumidite();
+    Objet capteurTemperature = new CapteurTemperature();
+    Objet douche = new Douche();
+    Objet enceinteConnecte = new EnceinteConnecte();
+    Objet fenetre = new Fenetre();
+    Objet ferArepasser = new FerARepasser();
+    Objet four = new Four();
+    Objet frigo = new Frigo();
+    Objet hotte = new Hotte();
+    Objet lavelinge = new LaveLinge();
+    Objet microOnde = new MicroOnde();
+    Objet mirroirConnecte = new MiroirConnecte();
+    Objet robotRangement = new RobotRangement();
+    Objet robotTracteur = new RobotTracteur();
+    Objet secheLinge = new SecheLinge();
+    Objet sondeHumidite = new SondeHumidite();
+    Objet sondeTemperature = new SondeTemperature();
+    Objet storeConnecte = new StoreConnecte();
+    Objet tele = new Tele();
+    Objet thermostat = new Thermostat();
     Objet lecteur_empreinte;
-    Objet sonnette;*/
+    Objet sonnette;
 
     //attributs pièce sous-sol
     Piece emplacement_voitures;
@@ -82,7 +105,14 @@ public static Maison initialiser() {
     // pièce séjour
     LinkedList<Piece> piece_Adjacent_sejour= new LinkedList<Piece>();
     ArrayList<Objet> objets_sejour = new ArrayList<Objet>();
-    //objets_exterieur_sejour.add(camera);
+    objets_sejour.add(philipsHue);
+    objets_sejour.add(cameraSurveillance);
+    objets_sejour.add(tele);
+    objets_sejour.add(storeConnecte);
+    objets_sejour.add(enceinteConnecte);
+    objets_sejour.add(pompeAchaleur);
+    objets_sejour.add(canape);
+    objets_sejour.add(cadreConnecte);
     sejour = new Sejour("Sejour",piece_Adjacent_sejour,objets_sejour);
 
     // pièce extérieure
