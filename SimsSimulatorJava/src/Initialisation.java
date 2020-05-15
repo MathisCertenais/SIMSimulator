@@ -6,8 +6,10 @@ import etages.Etage;
 import etages.RDC;
 import objets.Objet;
 import pieces.AccesGarage;
+import pieces.Ascenseur;
 import pieces.AscenseurVehicule;
 import pieces.Buanderie;
+import pieces.Bureau;
 import pieces.CaveAVin;
 import pieces.Chambre;
 import pieces.Cuisine;
@@ -23,6 +25,7 @@ import pieces.SalleMultiGaming;
 import pieces.SalleServeur;
 import pieces.Salon;
 import pieces.Sejour;
+import pieces.Toilette;
 import pieces.ZonePanneauPhotovoltaique;
 
 public class Initialisation {
@@ -38,7 +41,7 @@ public static Maison initialiser() {
     Piece emplacement_voitures;
     Piece ascenseur_vehicule;
     Piece ascenseur_sous_sol;
-    Piece serveur;
+    Piece salle_serveur;
     Piece cave_a_vin;
     //Objet pièce rez-de-chaussee
     Piece exterieurAccueil;
@@ -132,7 +135,7 @@ public static Maison initialiser() {
     piece_Adjacent_toilette.add(sejour);
     ArrayList<Objet> objets_toilette = new ArrayList<Objet>();
     //
-    toilette = new AccesGarage("toilette",piece_Adjacent_toilette,objets_toilette);
+    toilette = new Toilette("toilette",piece_Adjacent_toilette,objets_toilette);
     salleMultiGaming.ajouterPiece_Adj(toilette);
     sejour.ajouterPiece_Adj(toilette);  
 
@@ -141,7 +144,7 @@ public static Maison initialiser() {
     piece_Adjacent_SDB.add(salleMultiGaming);
     ArrayList<Objet> objets_SDB = new ArrayList<Objet>();
     //
-    salle_de_bain = new AccesGarage("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
+    salle_de_bain = new SDB("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
     salleMultiGaming.ajouterPiece_Adj(salle_de_bain);
 
     //pièce chambre
@@ -151,7 +154,7 @@ public static Maison initialiser() {
     piece_Adjacent_Chambre.add(sejour);
     ArrayList<Objet> objets_chambre = new ArrayList<Objet>();
     //
-    chambre = new AccesGarage("Salle_de_bain",piece_Adjacent_Chambre,objets_chambre);
+    chambre = new Chambre("Chambre",piece_Adjacent_Chambre,objets_chambre);
     salleMultiGaming.ajouterPiece_Adj(chambre);
     salle_de_bain.ajouterPiece_Adj(chambre);
     sejour.ajouterPiece_Adj(chambre);
@@ -162,9 +165,17 @@ public static Maison initialiser() {
     piece_Adjacent_bureau.add(sejour);
     ArrayList<Objet> objets_bureau = new ArrayList<Objet>();
     //
-    bureau = new AccesGarage("Salle_de_bain",piece_Adjacent_bureau,objets_bureau);
+    bureau = new Bureau("Bureau",piece_Adjacent_bureau,objets_bureau);
     chambre.ajouterPiece_Adj(bureau);
     sejour.ajouterPiece_Adj(bureau);
+
+    //pièce ascenseur rdc
+    LinkedList<Piece> piece_Adjacent_ascenseur_rdc = new LinkedList<Piece>();
+    piece_Adjacent_ascenseur_rdc.add(sejour);
+    ArrayList<Objet> objets_ascenseur_rdc = new ArrayList<Objet>();
+    //
+    ascenseur_rdc = new Ascenseur("Bureau",piece_Adjacent_ascenseur_rdc,objets_ascenseur_rdc);
+    sejour.ajouterPiece_Adj(ascenseur_rdc);
 
     /************-----------------FIN--REZ-DE-CHAUSSEE---------------------------********/
 
@@ -217,6 +228,14 @@ public static Maison initialiser() {
     sdb_Etage = new SDB("SalleDeBain",piece_adjacent_SalleDeBain,objets_SalleDeBain);
     salon.ajouterPiece_Adj(sdb_Etage);
 
+    //pièce ascenseur 1er etage
+    LinkedList<Piece> piece_Adjacent_ascenseur_1erEtage = new LinkedList<Piece>();
+    piece_Adjacent_ascenseur_1erEtage.add(salon);
+    ArrayList<Objet> objets_ascenseur_1erEtage = new ArrayList<Objet>();
+    //
+    ascenseur_1etage = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_1erEtage,objets_ascenseur_1erEtage);
+    salon.ajouterPiece_Adj(ascenseur_1etage);
+    /************--------------------FIN---1er--ETAGE-----------------------------********/
     /************-----------------DEBUT--TOIT-------------------------------------********/
 
     //emplacement vehicule aerien
@@ -251,6 +270,13 @@ public static Maison initialiser() {
     potager_hydroponique.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     entrepos_colis.ajouterPiece_Adj(zone_panneaux_photovoltaique);
 
+    //pièce ascenseur toit
+    LinkedList<Piece> piece_Adjacent_ascenseur_toit = new LinkedList<Piece>();
+    piece_Adjacent_ascenseur_toit.add(entrepos_colis);
+    ArrayList<Objet> objets_ascenseur_toit = new ArrayList<Objet>();
+    //
+    ascenseur_toit = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_toit,objets_ascenseur_toit);
+    entrepos_colis.ajouterPiece_Adj(ascenseur_toit);
     /************-----------------FIN--TOIT---------------------------------------********/
 
     /************-----------------DEBUT--SOUS-SOL---------------------------------********/
@@ -269,17 +295,23 @@ public static Maison initialiser() {
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
-    serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
-    emplacement_voitures.ajouterPiece_Adj(serveur);
+    salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
+    emplacement_voitures.ajouterPiece_Adj(salle_serveur);
 
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
     ArrayList<Objet> objets_CaveAVin = new ArrayList<Objet>();
     cave_a_vin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
-    serveur.ajouterPiece_Adj(cave_a_vin);
-    cave_a_vin.ajouterPiece_Adj(serveur);
+    salle_serveur.ajouterPiece_Adj(cave_a_vin);
+    cave_a_vin.ajouterPiece_Adj(salle_serveur);
 
-    
+    //pièce ascenseur sous_sol
+    LinkedList<Piece> piece_Adjacent_ascenseur_sous_sol = new LinkedList<Piece>();
+    piece_Adjacent_ascenseur_sous_sol.add(salle_serveur);
+    ArrayList<Objet> objets_ascenseur_sous_sol = new ArrayList<Objet>();
+    //
+    ascenseur_sous_sol = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_sous_sol,objets_ascenseur_sous_sol);
+    salle_serveur.ajouterPiece_Adj(ascenseur_sous_sol);
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
 
 
@@ -294,29 +326,34 @@ public static Maison initialiser() {
       pieces_rdc.add(bureau);
       pieces_rdc.add(chambre);
       pieces_rdc.add(toilette);
+      pieces_rdc.add(accesGarage);
+      pieces_rdc.add(ascenseur_rdc);
 
        //liste pièce 1er etage 
        LinkedList<Piece> pieces_1erEtage = new LinkedList<Piece>();
-       pieces_rdc.add(salon);
-       pieces_rdc.add(chambre_amis_1);
-       pieces_rdc.add(chambre_amis_2);
-       pieces_rdc.add(chambre_enfant_1);
-       pieces_rdc.add(chambre_enfant_1);
-       pieces_rdc.add(buanderie);
-       pieces_rdc.add(sdb_Etage);
+       pieces_1erEtage.add(salon);
+       pieces_1erEtage.add(chambre_amis_1);
+       pieces_1erEtage.add(chambre_amis_2);
+       pieces_1erEtage.add(chambre_enfant_1);
+       pieces_1erEtage.add(chambre_enfant_1);
+       pieces_1erEtage.add(buanderie);
+       pieces_1erEtage.add(sdb_Etage);
+       pieces_1erEtage.add(ascenseur_1etage);
 
       //liste pièce toit
       LinkedList<Piece> pieces_toit = new LinkedList<Piece>();
-      pieces_rdc.add(emplacement_véhicule_aerien);
-      pieces_rdc.add(potager_hydroponique);
-      pieces_rdc.add(entrepos_colis);
-      pieces_rdc.add(zone_panneaux_photovoltaique);
+      pieces_toit.add(emplacement_véhicule_aerien);
+      pieces_toit.add(potager_hydroponique);
+      pieces_toit.add(entrepos_colis);
+      pieces_toit.add(zone_panneaux_photovoltaique);
+      pieces_toit.add(ascenseur_toit);
 
-       //liste pièce sous-sol
-       LinkedList<Piece> pieces_sous_sol = new LinkedList<Piece>();
-       pieces_rdc.add(emplacement_voitures);
-       pieces_rdc.add(cave_a_vin);
-       pieces_rdc.add(serveur);
+      //liste pièce sous-sol
+      LinkedList<Piece> pieces_sous_sol = new LinkedList<Piece>();
+      pieces_sous_sol.add(emplacement_voitures);
+      pieces_sous_sol.add(cave_a_vin);
+      pieces_sous_sol.add(salle_serveur);
+      pieces_sous_sol.add(ascenseur_sous_sol);
  
       //Etage rez_de_chaussee
       Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
