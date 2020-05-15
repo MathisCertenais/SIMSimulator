@@ -1,12 +1,11 @@
 package objets;
 
-import java.util.LinkedList;
 import java.util.Random;
 
 public class CapteurHumidite extends Objet {
     
-    public CapteurHumidite(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public CapteurHumidite(){
+       super("Capteur d'humidite","en place");
        actions.add("Obtenir la valeur du capteur");    //Ajout des Actions de Bases pour le capteur d'humidite
     }
     
