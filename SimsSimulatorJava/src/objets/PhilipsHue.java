@@ -1,6 +1,5 @@
 package objets;
 
-import java.util.LinkedList;
 
 public class PhilipsHue extends Objet {
     
@@ -13,11 +12,11 @@ public class PhilipsHue extends Objet {
     @Override
     public void realiserAction(int c) {
         if(c == 0){
-            if(this.etat == "allumé"){
-                System.out.println("L'ampoule est déjà allumé");
+            if(this.etat == "allumée"){
+                System.out.println("L'ampoule est déjà allumeée");
             }
             else {
-                this.etat = "allumé";
+                this.etat = "allumée";
                 System.out.println("L'ampoule s'allume");
             }
         }

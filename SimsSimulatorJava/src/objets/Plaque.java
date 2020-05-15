@@ -1,6 +1,5 @@
 package objets;
 
-import java.util.LinkedList;
 
 public class Plaque extends Objet {
     
