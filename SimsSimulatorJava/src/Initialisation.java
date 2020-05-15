@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import etages.Etage;
+import etages.Etage1;
 import etages.RDC;
+import etages.SousSol;
+import etages.Toit;
 import objets.Objet;
 import pieces.AccesGarage;
 import pieces.Ascenseur;
@@ -74,7 +77,7 @@ public static Maison initialiser() {
     Piece zone_panneaux_photovoltaique;
     Piece ascenseur_toit;
 
-    
+
     /************-------------------REZ-DE-CHAUSSEE---------------------------********/
     // pièce séjour
     LinkedList<Piece> piece_Adjacent_sejour= new LinkedList<Piece>();
@@ -360,11 +363,11 @@ public static Maison initialiser() {
       //Etage rez_de_chaussee
       Etage rdc = new RDC("rez_de_chausee",pieces_rdc);
       //Etage 1er
-      Etage etage1er = new RDC("1er_étage",pieces_1erEtage);
+      Etage etage1er = new Etage1("1er_étage",pieces_1erEtage);
       //Etage toit
-      Etage toit = new RDC("toit",pieces_toit);
+      Etage toit = new Toit("toit",pieces_toit);
       //Etage sous-sol
-      Etage sous_sol = new RDC("sous-sol",pieces_sous_sol);
+      Etage sous_sol = new SousSol("sous-sol",pieces_sous_sol);
      
       //Liste étage 
       LinkedList<Etage> liste_etages = new LinkedList<Etage>();
