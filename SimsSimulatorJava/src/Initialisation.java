@@ -50,6 +50,7 @@ public static Maison initialiser() {
     Objet frigo = new Frigo();
     Objet hotte = new Hotte();
     Objet lavelinge = new LaveLinge();
+    Objet lavevaiselle = new LaveVaisselle();
     Objet microOnde = new MicroOnde();
     Objet mirroirConnecte = new MiroirConnecte();
     Objet pc = new PC();
@@ -70,7 +71,6 @@ public static Maison initialiser() {
 
     //attributs pièce sous-sol
     Piece emplacement_voitures;
-    Piece ascenseur_vehicule;
     Piece ascenseur_sous_sol;
     Piece salle_serveur;
     Piece cave_a_vin;
@@ -372,28 +372,22 @@ public static Maison initialiser() {
 
     /************-----------------DEBUT--SOUS-SOL---------------------------------********/
 
-    //ascenseur vehicule
-    LinkedList<Piece> piece_adjacent_AscenseurVehicule = new LinkedList<Piece>();
-    ArrayList<Objet> objets_AscenseurVehicule = new ArrayList<Objet>();
-    ascenseur_vehicule = new AscenseurVehicule("Ascenseur vehicule",piece_adjacent_AscenseurVehicule,objets_AscenseurVehicule);
-
     //garage
     LinkedList<Piece> piece_adjacent_Garage= new LinkedList<Piece>();
     ArrayList<Objet> objets_Garage = new ArrayList<Objet>();
     emplacement_voitures = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
-    ascenseur_vehicule.ajouterPiece_Adj(emplacement_voitures);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
+    objets_Garage.add(philipsHue);
+    objets_Garage.add(cameraSurveillance);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
     salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
     emplacement_voitures.ajouterPiece_Adj(salle_serveur);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
-    objets_sejour.add(capteurTemperature);
-    objets_sejour.add(pompeAChaleur);
+    objets_SalleServeur.add(philipsHue);
+    objets_SalleServeur.add(cameraSurveillance);
+    objets_SalleServeur.add(capteurTemperature);
+    objets_SalleServeur.add(pompeAchaleur);
     
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
@@ -402,11 +396,11 @@ public static Maison initialiser() {
     salle_serveur.ajouterPiece_Adj(cave_a_vin);
     cave_a_vin.ajouterPiece_Adj(salle_serveur);
     emplacement_voitures.ajouterPiece_Adj(salle_serveur);
-    objets_sejour.add(philipsHue);
-    objets_sejour.add(cameraSurveillance);
-    objets_sejour.add(capteurTemperature);
-    objets_sejour.add(capteurHumidite);
-    objets_sejour.add(pompeAChaleur);
+    objets_CaveAVin.add(philipsHue);
+    objets_CaveAVin.add(cameraSurveillance);
+    objets_CaveAVin.add(capteurTemperature);
+    objets_CaveAVin.add(capteurHumidite);
+    objets_CaveAVin.add(pompeAchaleur);
 
     //pièce ascenseur sous_sol
     LinkedList<Piece> piece_Adjacent_ascenseur_sous_sol = new LinkedList<Piece>();
