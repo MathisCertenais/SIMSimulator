@@ -56,7 +56,7 @@ public static Maison initialiser() {
     Objet pc = new PC();
     Objet philipsHue = new PhilipsHue();
     Objet plaque = new Plaque();
-    Objet PlateformeVehicule = new PlateformeVehicule();
+    Objet plateformeVehicule = new PlateformeVehicule();
     Objet pompeAchaleur = new PompeAChaleur();
     Objet portailConnecte = new PortailConnecte();
     Objet poubelle = new Poubelle();
@@ -167,6 +167,7 @@ public static Maison initialiser() {
     objets_acces_garage.add(philipsHue);
     objets_acces_garage.add(cameraSurveillance);
     objets_acces_garage.add(pompeAchaleur);
+    objets_acces_garage.add(plateformeVehicule);
     accesGarage = new AccesGarage("Acces_Garage",piece_Adjacent_acces_garage,objets_acces_garage);
     cuisine.ajouterPiece_Adj(accesGarage);
     sejour.ajouterPiece_Adj(accesGarage);
@@ -251,7 +252,7 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_Adjacent_ascenseur_rdc = new LinkedList<Piece>();
     piece_Adjacent_ascenseur_rdc.add(sejour);
     ArrayList<Objet> objets_ascenseur_rdc = new ArrayList<Objet>();
-    ascenseur_rdc = new Ascenseur("Bureau",piece_Adjacent_ascenseur_rdc,objets_ascenseur_rdc);
+    ascenseur_rdc = new Ascenseur("Ascenceur rdc",piece_Adjacent_ascenseur_rdc,objets_ascenseur_rdc);
     sejour.ajouterPiece_Adj(ascenseur_rdc);
 
     /************-----------------FIN--REZ-DE-CHAUSSEE---------------------------********/
@@ -417,6 +418,7 @@ public static Maison initialiser() {
     emplacement_voitures = new Garage("Garage",piece_adjacent_Garage,objets_Garage);
     objets_Garage.add(philipsHue);
     objets_Garage.add(cameraSurveillance);
+    objets_Garage.add(plateformeVehicule);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
