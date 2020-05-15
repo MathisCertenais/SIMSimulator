@@ -96,7 +96,7 @@ public static void main(String[] args) {
             //Affichage des etages
             System.out.println("Liste des étages :");
             for(int i=0; i<maison.getAllEtage().size(); i++){
-                System.out.println(i + "- " + maison.getAllEtage().get(i));
+                System.out.println(i + "- " + maison.getAllEtage().get(i).getNom());
             }
             System.out.print("Tapez le chiffre correspondant à l'étage : ");
             int idEtage = scan.nextInt();
