@@ -6,3 +6,4 @@ public class Thermostat extends Objet {
        super("Ampoule PhilipsHue", "Allumé");
        actions.add("Regler la température");    //Ajout des Actions de Bases de l'ampoule
     }
+   }
