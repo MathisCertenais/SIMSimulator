@@ -37,13 +37,14 @@ public static Maison initialiser() {
     Objet lecteur_empreinte;
     Objet sonnette;*/
 
-    //Objet pièce sous-sol
+    //attributs pièce sous-sol
     Piece emplacement_voitures;
     Piece ascenseur_vehicule;
     Piece ascenseur_sous_sol;
     Piece salle_serveur;
     Piece cave_a_vin;
-    //Objet pièce rez-de-chaussee
+
+    //attributs pièce rez-de-chaussee
     Piece exterieurAccueil;
     Piece sejour;
     Piece accesGarage;
@@ -55,7 +56,8 @@ public static Maison initialiser() {
     Piece salle_de_bain; 
     Piece toilette;
     Piece ascenseur_rdc;
-    //Objet pièce 1er étage
+
+    //attributs pièce 1er étage
     Piece chambre_enfant_1;
     Piece chambre_enfant_2;
     Piece salon;
@@ -64,7 +66,8 @@ public static Maison initialiser() {
     Piece buanderie;
     Piece sdb_Etage;
     Piece ascenseur_1etage;
-    //Objet pièce toit
+
+    //attributs pièce toit
     Piece emplacement_véhicule_aerien;
     Piece potager_hydroponique;
     Piece entrepos_colis;
@@ -72,7 +75,6 @@ public static Maison initialiser() {
     Piece ascenseur_toit;
 
     
-
     /************-------------------REZ-DE-CHAUSSEE---------------------------********/
     // pièce séjour
     LinkedList<Piece> piece_Adjacent_sejour= new LinkedList<Piece>();
