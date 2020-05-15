@@ -9,6 +9,11 @@ public class CapteurTemperature extends Objet {
        actions.add("Obtenir la valeur du capteur");    //Ajout des Actions de Bases pour le capteur de temperature
     }
     
+    @Override
+    public void realiserAction(int c) {
+            System.out.println("Vous regardez la valeur du capteur:"+getTemp(22,24)); 
+    }
+
     public static double getTemp(double min, double max){
         double valeur = nbAlea(min,max);
         return valeur;

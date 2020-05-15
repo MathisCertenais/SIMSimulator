@@ -8,6 +8,11 @@ public class CapteurHumidite extends Objet {
        super("Capteur d'humidite","en place");
        actions.add("Obtenir la valeur du capteur");    //Ajout des Actions de Bases pour le capteur d'humidite
     }
+
+    @Override
+    public void realiserAction(int c) {
+            System.out.println("Vous regardez la valeur du capteur:"+getHumi(22,24)); 
+    }
     
     public static double getHumi(double min, double max){
         double valeur = nbAlea(min,max);
