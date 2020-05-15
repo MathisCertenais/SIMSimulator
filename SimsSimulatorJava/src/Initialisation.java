@@ -385,7 +385,7 @@ public static Maison initialiser() {
     objets_EntrepotColis.add(philipsHue);
     objets_EntrepotColis.add(cameraSurveillance);
     objets_EntrepotColis.add(robotRangement);
-    objets_EntrepotColis.add(pompeAChaleur);
+    objets_EntrepotColis.add(pompeAchaleur);
 
     //zone panneau photovoltaique
     LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
