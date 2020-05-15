@@ -24,14 +24,18 @@ public class Maison {
         if (liste_etages.contains(etage_actuel)){
             memory_etage = etage_actuel;
         }
-        System.out.println("Impossible, l'étage n'existe pas");
+        else {
+            System.out.println("Impossible, l'étage n'existe pas");
+        }
     }
 
     public void setPiece(Piece piece_actuel){
         if (memory_etage.getAllPiece().contains(piece_actuel)){
             memory_piece = piece_actuel;
         }
-        System.out.println("Impossible, la piece n'existe pas");
+        else {
+            System.out.println("Impossible, la piece n'existe pas");
+        }
     }
 
     public Piece getPiece(){
