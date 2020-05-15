@@ -1,10 +1,9 @@
 package objets;
 
-import java.util.LinkedList;
-
 public class SondeTemperature extends Objet {
     
-    public SondeTemperature(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
+    public SondeTemperature(){
+        super("Sonde de temperature","Active");
+        actions.add("Regarder la valeure de temperature"); //Ajout des Actions de Bases de la sonde temperature
     }
 }

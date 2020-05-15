@@ -1,10 +1,9 @@
 package objets;
 
-import java.util.LinkedList;
-
 public class SondeHumidite extends Objet {
     
-    public SondeHumidite(String nom, String etat, LinkedList<String> actions){
-       super(nom,etat,actions);
-    }
+public SondeHumidite(){
+    super("Sonde d'humidite","Active");
+    actions.add("Regarder la valeure d'humidite");    //Ajout des Actions de Bases de la sonde humidite
+ }
 }
