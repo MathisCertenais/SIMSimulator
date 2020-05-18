@@ -28,7 +28,6 @@ public class PlateformeVehicule extends Objet {
             int idVehicule = scan.nextInt();
             System.out.println("L'ascenseur s'active et vous pouvez admirer votre magnifique " 
                 + vehicules.get(idVehicule));
-            scan.close();
         }
         else {
             System.out.println("Il ne se passe rien"); 

@@ -18,7 +18,7 @@ public class Plaque extends Objet {
     public void realiserAction(int c) {
         if(c == 0){
             if(this.etat == "allumée"){
-                System.out.println("La plaque est déjà allumeée");
+                System.out.println("La plaque est déjà allumée");
             }
             else {
                 this.etat = "allumée";
