@@ -64,8 +64,7 @@ public static void main(String[] args) {
             System.out.print("Tapez le chiffre correspondant à l'objet : ");
             int idObjet = scan.nextInt();
             if(idObjet > -1 && idObjet < objets_dispo.size()){
-                System.out.println(objets_dispo.get(idObjet).getNom() + " est " 
-                    + objets_dispo.get(idObjet).getEtat());
+                System.out.println(objets_dispo.get(idObjet));
 
                 //Affichage des actions
                 System.out.println("Actions réalisable :");
@@ -102,9 +101,14 @@ public static void main(String[] args) {
             int idEtage = scan.nextInt();
             if(idEtage > -1 && idEtage < maison.getAllEtage().size()){
                 maison.setEtage(maison.getAllEtage().get(idEtage));
+                for(int i=0; i<maison.getEtage().getAllPiece().size(); i++){
+                    if(maison.getEtage().getPiece(i) instanceof Ascenseur){
+                        maison.setPiece(maison.getEtage().getPiece(i));
+                    }
+                }
             }
             else{
-                System.out.println("Erreur, le numéro ne correspond à aucune piece");
+                System.out.println("Erreur, le numéro ne correspond à aucun étage");
             }
         }
     }

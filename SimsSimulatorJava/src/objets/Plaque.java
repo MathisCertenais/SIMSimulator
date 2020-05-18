@@ -37,7 +37,7 @@ public class Plaque extends Objet {
         }
         else if(c == 2 && this.etat == "allumée"){
             if(puissance < 10){
-                puissance++;
+                puissance += 1;
                 System.out.println("Vous augmentez la puissance");
             }
             else{
@@ -46,7 +46,7 @@ public class Plaque extends Objet {
         }
         else if(c == 3 && this.etat == "allumée"){
             if(puissance > 0){
-                puissance--;
+                puissance -= 1;
                 System.out.println("Vous diminuez la puissance");
             }
             else{

@@ -27,4 +27,8 @@ public abstract class Objet{
 
     public void realiserAction(int c){
     }
+
+    public String toString(){
+        return(this.nom + " est " + this.etat);
+    }
 }
