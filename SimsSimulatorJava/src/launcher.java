@@ -78,22 +78,30 @@ public class launcher {
                     System.out.print("Tapez le chiffre correspondant à l'objet : ");
                     int idObjet = scan.nextInt();
                     if (idObjet > -1 && idObjet < objets_dispo.size()) {
-                        System.out.println(objets_dispo.get(idObjet));
 
-                        // Affichage des actions
-                        System.out.println("Actions réalisable :");
-                        LinkedList<String> actions_dispo = objets_dispo.get(idObjet).getAction();
-                        for (int i = 0; i < actions_dispo.size(); i++) {
-                            System.out.println(i + "- " + actions_dispo.get(i));
-                        }
+                        // Focus sur un objet
+                        boolean focusObj = true;
+                        while (focusObj) {
+                            System.out.println(objets_dispo.get(idObjet));
 
-                        // Choix de l'action
-                        System.out.print("Tapez le chiffre correspondant à l'objet : ");
-                        int idActionObj = scan.nextInt();
-                        if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
-                            maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
-                        } else {
-                            System.out.println("Erreur, le noméro ne correspond à aucune action");
+                            // Affichage des actions
+                            System.out.println("Actions réalisable :");
+                            LinkedList<String> actions_dispo = objets_dispo.get(idObjet).getAction();
+                            for (int i = 0; i < actions_dispo.size(); i++) {
+                                System.out.println(i + "- " + actions_dispo.get(i));
+                            }
+                            System.out.println(actions_dispo.size() + "- Laisser l'objet tranquille");
+
+                            // Choix de l'action
+                            System.out.print("Tapez le chiffre correspondant à l'objet : ");
+                            int idActionObj = scan.nextInt();
+                            if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
+                                maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
+                            } else if (idActionObj == actions_dispo.size()) {
+                                focusObj = false;
+                            } else {
+                                System.out.println("Erreur, le noméro ne correspond à aucune action");
+                            }
                         }
                     } else {
                         System.out.println("Erreur, le numéro ne correspond à aucun objet");
@@ -124,43 +132,43 @@ public class launcher {
                 }
             }
         }
-        
+
         /*** Boucle admin du jeu ***/
         else if (idRole == 2) {
-            
-            //Entrée du mot de passe
+
+            // Entrée du mot de passe
             int nbEssais = 0;
             while (nbEssais < 3) {
                 System.out.print("Veuillez saisir le mot de passe : ");
                 String mdp = scan.next();
                 System.out.println(mdp);
 
-                //Succès mot de passe
+                // Succès mot de passe
                 if (mdp.equals("1234")) {
                     System.out.println("Vous êtes maintenant administrateur");
                     nbEssais = 3;
                     boolean play = true;
-                    while(play){
+                    while (play) {
 
-                        //Choix première action
+                        // Choix première action
                         System.out.println("Vous pouvez :");
                         System.out.println("0- Quitter le jeu");
                         System.out.print("Tapez le chiffre correspondant : ");
                         int idAction = scan.nextInt();
 
-                        //Quitter le jeu
+                        // Quitter le jeu
                         if (idAction == 0) {
                             play = false;
                             System.out.println("Merci d'avoir jouer !!");
                         }
                     }
-                } 
-                
-                //Echec mot de passe
+                }
+
+                // Echec mot de passe
                 else {
                     System.out.println("Mode de passe incorrect");
                     nbEssais += 1;
-                    System.out.println("Il reste " + (3-nbEssais) + " tentatives");
+                    System.out.println("Il reste " + (3 - nbEssais) + " tentatives");
                 }
             }
         }
