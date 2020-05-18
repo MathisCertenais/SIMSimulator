@@ -6,11 +6,11 @@ public class Initialisation {
 
 public static Maison initialiser() {
     //objets de la maison
-    LinkedList<String> actions = new LinkedList<String>() ;
+   /* LinkedList<String> actions = new LinkedList<String>() ;
     Objet camera ;
 
     Objet lecteur_empreinte;
-    Objet sonnette;
+    Objet sonnette;*/
 
     Piece sejour;
     Piece exterieurAccueil;
