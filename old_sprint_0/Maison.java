@@ -1,9 +1,10 @@
 package old_sprint_0;
+
 import java.util.LinkedList;
 
 public class Maison {
 
-    private LinkedList<Etage> liste_etages = new LinkedList<Etage>();
+    private LinkedList<Etage> liste_etages;
     private Etage memory_etage;
     private Piece memory_piece;
     // Liste_etages.add(sous_sol);
@@ -12,8 +13,16 @@ public class Maison {
     // Liste_etages.add(toit);
 
     public Maison(LinkedList<Etage> liste_etages) {
-        this.liste_etages = liste_etages;
+        this.setListe_etages(liste_etages);
 
+    }
+
+    public LinkedList<Etage> getListe_etages() {
+        return liste_etages;
+    }
+
+    public void setListe_etages(LinkedList<Etage> liste_etages) {
+        this.liste_etages = liste_etages;
     }
 
     public void setEtage(Etage etage_actuel) {

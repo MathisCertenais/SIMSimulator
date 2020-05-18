@@ -10,7 +10,6 @@ import etages.Toit;
 import objets.*;
 import pieces.AccesGarage;
 import pieces.Ascenseur;
-import pieces.AscenseurVehicule;
 import pieces.Buanderie;
 import pieces.Bureau;
 import pieces.CaveAVin;
@@ -118,6 +117,8 @@ public static Maison initialiser() {
     objets_sejour.add(pompeAchaleur);
     objets_sejour.add(canape);
     objets_sejour.add(cadreConnecte);
+    objets_sejour.add(aspirateurAutonome);
+    objets_sejour.add(poubelle);
     sejour = new Sejour("Sejour",piece_Adjacent_sejour,objets_sejour);
 
     // pièce extérieure
@@ -142,6 +143,8 @@ public static Maison initialiser() {
     objets_cuisine.add(thermostat);
     objets_cuisine.add(microOnde);
     objets_cuisine.add(storeConnecte);
+    objets_cuisine.add(lavevaiselle);
+    objets_cuisine.add(poubelle);
     cuisine = new Cuisine("Cuisine",piece_Adjacent_cuisine,objets_cuisine);
     sejour.ajouterPiece_Adj(cuisine);
 
@@ -154,6 +157,7 @@ public static Maison initialiser() {
     objets_homeCinema.add(cameraSurveillance);
     objets_homeCinema.add(tele);
     objets_homeCinema.add(pompeAchaleur);
+    objets_homeCinema.add(poubelle);
     homeCinema = new HomeCinema("Home_Cinema",piece_Adjacent_homeCinema,objets_homeCinema);
     cuisine.ajouterPiece_Adj(homeCinema);
     sejour.ajouterPiece_Adj(homeCinema);
@@ -168,6 +172,7 @@ public static Maison initialiser() {
     objets_acces_garage.add(cameraSurveillance);
     objets_acces_garage.add(pompeAchaleur);
     objets_acces_garage.add(plateformeVehicule);
+    objets_acces_garage.add(poubelle);
     accesGarage = new AccesGarage("Acces_Garage",piece_Adjacent_acces_garage,objets_acces_garage);
     cuisine.ajouterPiece_Adj(accesGarage);
     sejour.ajouterPiece_Adj(accesGarage);
@@ -186,6 +191,7 @@ public static Maison initialiser() {
     objets_multi_gaming.add(enceinteConnecte);
     objets_multi_gaming.add(pompeAchaleur);
     objets_multi_gaming.add(pc);
+    objets_multi_gaming.add(poubelle);
     salleMultiGaming = new SalleMultiGaming("Salle_multi_gaming",piece_Adjacent_multi_gaming,objets_multi_gaming);
     homeCinema.ajouterPiece_Adj(salleMultiGaming);
     sejour.ajouterPiece_Adj(salleMultiGaming);
@@ -198,6 +204,7 @@ public static Maison initialiser() {
     objets_toilette.add(philipsHue);
     objets_toilette.add(cameraSurveillance);
     objets_toilette.add(mirroirConnecte);
+    objets_toilette.add(poubelle);
     toilette = new Toilette("toilette",piece_Adjacent_toilette,objets_toilette);
     salleMultiGaming.ajouterPiece_Adj(toilette);
     sejour.ajouterPiece_Adj(toilette);  
@@ -213,6 +220,7 @@ public static Maison initialiser() {
     objets_SDB.add(pompeAchaleur);
     objets_SDB.add(mirroirConnecte);
     objets_SDB.add(lavelinge);
+    objets_SDB.add(poubelle);
     salle_de_bain = new SDB("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
     salleMultiGaming.ajouterPiece_Adj(salle_de_bain);
 
@@ -229,7 +237,8 @@ public static Maison initialiser() {
     objets_chambre.add(storeConnecte);
     objets_chambre.add(fenetre);
     objets_chambre.add(pompeAchaleur);
-    objets_chambre.add(mirroirConnecte);    
+    objets_chambre.add(mirroirConnecte);
+    objets_chambre.add(poubelle);    
     chambre = new Chambre("Chambre",piece_Adjacent_Chambre,objets_chambre);
     salleMultiGaming.ajouterPiece_Adj(chambre);
     salle_de_bain.ajouterPiece_Adj(chambre);
@@ -244,6 +253,7 @@ public static Maison initialiser() {
     objets_bureau.add(cameraSurveillance);
     objets_bureau.add(fenetre);
     objets_bureau.add(pompeAchaleur);
+    objets_bureau.add(poubelle);
     bureau = new Bureau("Bureau",piece_Adjacent_bureau,objets_bureau);
     chambre.ajouterPiece_Adj(bureau);
     sejour.ajouterPiece_Adj(bureau);
@@ -267,6 +277,7 @@ public static Maison initialiser() {
     objets_ChambreEnfant1.add(cameraSurveillance);
     objets_ChambreEnfant1.add(storeConnecte);
     objets_ChambreEnfant1.add(pompeAchaleur);
+    objets_ChambreEnfant1.add(poubelle);
 
     //chambre enfant n°2
     LinkedList<Piece> piece_adjacent_ChambreEnfant2= new LinkedList<Piece>();
@@ -276,6 +287,7 @@ public static Maison initialiser() {
     objets_ChambreEnfant2.add(cameraSurveillance);
     objets_ChambreEnfant2.add(storeConnecte);
     objets_ChambreEnfant2.add(pompeAchaleur);
+    objets_ChambreEnfant2.add(poubelle);
 
     //chambre amis n°1
     LinkedList<Piece> piece_adjacent_ChambreAmis1= new LinkedList<Piece>();
@@ -285,6 +297,7 @@ public static Maison initialiser() {
     objets_ChambreAmis1.add(cameraSurveillance);
     objets_ChambreAmis1.add(storeConnecte);
     objets_ChambreAmis1.add(pompeAchaleur);
+    objets_ChambreAmis1.add(poubelle);
 
     //chambre amis n°2
     LinkedList<Piece> piece_adjacent_ChambreAmis2= new LinkedList<Piece>();
@@ -295,6 +308,7 @@ public static Maison initialiser() {
     objets_ChambreAmis2.add(storeConnecte);
     objets_ChambreAmis2.add(pompeAchaleur);
     objets_ChambreAmis2.add(cadreConnecte);
+    objets_ChambreAmis2.add(poubelle);
 
     //buanderie
     LinkedList<Piece> piece_adjacent_Buanderie= new LinkedList<Piece>();
@@ -308,6 +322,7 @@ public static Maison initialiser() {
     objets_Buanderie.add(storeConnecte);
     objets_Buanderie.add(fenetre);
     objets_Buanderie.add(ferArepasser);
+    objets_Buanderie.add(poubelle);
     
 
     //salon
@@ -330,6 +345,8 @@ public static Maison initialiser() {
     objets_Salon.add(cadreConnecte);
     objets_Salon.add(pompeAchaleur);
     objets_Salon.add(storeConnecte);
+    objets_Salon.add(aspirateurAutonome);
+    objets_Salon.add(poubelle);
 
     //salle de bain
     LinkedList<Piece> piece_adjacent_SalleDeBain= new LinkedList<Piece>();
@@ -344,6 +361,7 @@ public static Maison initialiser() {
     objets_SalleDeBain.add(pompeAchaleur);
     objets_SalleDeBain.add(storeConnecte);
     objets_SalleDeBain.add(fenetre);
+    objets_SalleDeBain.add(poubelle);
 
     //pièce ascenseur 1er etage
     LinkedList<Piece> piece_Adjacent_ascenseur_1erEtage = new LinkedList<Piece>();
@@ -361,6 +379,7 @@ public static Maison initialiser() {
     emplacement_véhicule_aerien = new EmplacementVehiculeAerien("Emplacement vehicule aerien",piece_adjacent_EmplacementVehiculeAerien,objets_EmplacementVehiculeAerien);
     objets_EmplacementVehiculeAerien.add(philipsHue);
     objets_EmplacementVehiculeAerien.add(cameraSurveillance);
+    objets_EmplacementVehiculeAerien.add(poubelle);
 
     //potager hydroponique
     LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
@@ -374,6 +393,7 @@ public static Maison initialiser() {
     objets_PotagerHydroponique.add(sondeHumidite);
     objets_PotagerHydroponique.add(portailConnecte);
     objets_PotagerHydroponique.add(robotTracteur);
+    objets_PotagerHydroponique.add(poubelle);
 
     //entrepot colis
     LinkedList<Piece> piece_adjacent_EntrepotColis= new LinkedList<Piece>();
@@ -387,6 +407,8 @@ public static Maison initialiser() {
     objets_EntrepotColis.add(cameraSurveillance);
     objets_EntrepotColis.add(robotRangement);
     objets_EntrepotColis.add(pompeAchaleur);
+    objets_EntrepotColis.add(aspirateurAutonome);
+    objets_EntrepotColis.add(poubelle);
 
     //zone panneau photovoltaique
     LinkedList<Piece> piece_adjacent_ZonePanneauPhotovoltaique= new LinkedList<Piece>();
@@ -400,6 +422,7 @@ public static Maison initialiser() {
     entrepos_colis.ajouterPiece_Adj(zone_panneaux_photovoltaique);
     objets_ZonePanneauPhotovoltaique.add(philipsHue);
     objets_ZonePanneauPhotovoltaique.add(cameraSurveillance);
+    objets_ZonePanneauPhotovoltaique.add(poubelle);
 
     //pièce ascenseur toit
     LinkedList<Piece> piece_Adjacent_ascenseur_toit = new LinkedList<Piece>();
@@ -419,6 +442,7 @@ public static Maison initialiser() {
     objets_Garage.add(philipsHue);
     objets_Garage.add(cameraSurveillance);
     objets_Garage.add(plateformeVehicule);
+    objets_Garage.add(poubelle);
 
     //salle serveur
     LinkedList<Piece> piece_adjacent_SalleServeur= new LinkedList<Piece>();
@@ -429,6 +453,7 @@ public static Maison initialiser() {
     objets_SalleServeur.add(cameraSurveillance);
     objets_SalleServeur.add(capteurTemperature);
     objets_SalleServeur.add(pompeAchaleur);
+    objets_SalleServeur.add(poubelle);
     
     //cave a vin
     LinkedList<Piece> piece_adjacent_CaveAVin= new LinkedList<Piece>();
@@ -442,6 +467,7 @@ public static Maison initialiser() {
     objets_CaveAVin.add(capteurTemperature);
     objets_CaveAVin.add(capteurHumidite);
     objets_CaveAVin.add(pompeAchaleur);
+    objets_CaveAVin.add(poubelle);
 
     //pièce ascenseur sous_sol
     LinkedList<Piece> piece_Adjacent_ascenseur_sous_sol = new LinkedList<Piece>();
