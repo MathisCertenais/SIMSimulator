@@ -449,6 +449,7 @@ public static Maison initialiser() {
     ArrayList<Objet> objets_SalleServeur = new ArrayList<Objet>();
     salle_serveur = new SalleServeur("Salle serveur",piece_adjacent_SalleServeur,objets_SalleServeur);
     emplacement_voitures.ajouterPiece_Adj(salle_serveur);
+    salle_serveur.ajouterPiece_Adj(emplacement_voitures);
     objets_SalleServeur.add(philipsHue);
     objets_SalleServeur.add(cameraSurveillance);
     objets_SalleServeur.add(capteurTemperature);
@@ -461,7 +462,8 @@ public static Maison initialiser() {
     cave_a_vin = new CaveAVin("Cave a vin",piece_adjacent_CaveAVin,objets_CaveAVin);
     salle_serveur.ajouterPiece_Adj(cave_a_vin);
     cave_a_vin.ajouterPiece_Adj(salle_serveur);
-    emplacement_voitures.ajouterPiece_Adj(salle_serveur);
+    emplacement_voitures.ajouterPiece_Adj(cave_a_vin);
+    cave_a_vin.ajouterPiece_Adj(emplacement_voitures);
     objets_CaveAVin.add(philipsHue);
     objets_CaveAVin.add(cameraSurveillance);
     objets_CaveAVin.add(capteurTemperature);
