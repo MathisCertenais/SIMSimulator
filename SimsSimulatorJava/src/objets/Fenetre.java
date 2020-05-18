@@ -13,17 +13,17 @@ public class Fenetre extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "ouverte") {
-                System.out.println("La fenetre est deja ouverte");
+                System.out.println("La fenetre est déja ouverte");
             } else {
                 this.etat = "ouverte";
-                System.out.println("Vous ouvre la fenetre");
+                System.out.println("Vous ouvrez la fenetre");
             }
         } else if (c == 0) {
             if (this.etat == "ferme") {
                 System.out.println("la fenetre est deja ferme");
             } else {
                 this.etat = "ferme";
-                System.out.println("vous ferme la fenetre");
+                System.out.println("vous fermez la fenetre");
             }
         }   else {
             System.out.println("Il ne se passe rien");

@@ -13,17 +13,17 @@ public class Hotte extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "allume") {
-                System.out.println("La hotte est deja Allume");
+                System.out.println("La hotte est déja Allume");
             } else {
                 this.etat = "allume";
-                System.out.println("Vous allume la hotte");
+                System.out.println("Vous allumez la hotte");
             }
         } else if (c == 0) {
             if (this.etat == "eteint") {
-                System.out.println("la hotte est deja eteint");
+                System.out.println("la hotte est déja eteint");
             } else {
                 this.etat = "eteint";
-                System.out.println("vous eteigner la hotte");
+                System.out.println("vous eteignez la hotte");
             }
         }   else {
             System.out.println("Il ne se passe rien");

@@ -10,7 +10,7 @@ public class CameraSurveillance extends Objet {
     @Override
     public void realiserAction(int c) {
         if(c == 0){
-            System.out.println("vous avez maintenant accès aux video enregistrer");
+            System.out.println("vous avez maintenant accès aux video enregistré");
         }
         else {
             System.out.println("Il ne se passe rien"); 

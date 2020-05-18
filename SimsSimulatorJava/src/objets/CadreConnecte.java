@@ -15,21 +15,21 @@ public class CadreConnecte extends Objet {
     @Override
     public void realiserAction(int c) {
         if(c == 0){
-            if(this.etat == "eteint"){
-                System.out.println("Le cadre connecte est déjà eteint");
+            if(this.etat == "éteint"){
+                System.out.println("Le cadre connecté est déjà eteint");
             }
             else {
                 this.etat = "eteint";
-                System.out.println("Le cadre connecte s'eteint");
+                System.out.println("Le cadre connecté s'eteint");
             }
         }
         else if(c == 1){
             if(this.etat == "actif"){
-                System.out.println("Le cadre connecte est déjà a actif");
+                System.out.println("Le cadre connecté est déjà actif");
             }
             else {
                 this.etat = "actif";
-                System.out.println("Le cadre connecte retourne s'allume");
+                System.out.println("Le cadre connecté s'allume");
             }
         }
         if(c == 2){
@@ -42,11 +42,11 @@ public class CadreConnecte extends Objet {
             }
             if(c == 3){
                 if(this.etat == "eteint"){
-                    System.out.println("*Super...Vous regardez en ecran noir*");
+                    System.out.println("*Super...Vous regardez en écran noir*");
                 }
                 else {
                     this.etat = "actif";
-                    System.out.println("*vous regarder la photo*");
+                    System.out.println("*vous regardez la photo*");
                 }
             }
              else {

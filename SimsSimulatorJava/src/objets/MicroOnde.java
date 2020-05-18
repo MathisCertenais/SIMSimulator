@@ -13,17 +13,17 @@ public class MicroOnde extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "allume") {
-                System.out.println("Le micro-Onde est deja Allume");
+                System.out.println("Le micro-Onde est déja Allumé");
             } else {
                 this.etat = "allume";
-                System.out.println("Vous allume Le micro-Onde");
+                System.out.println("Vous allumez Le micro-Onde");
             }
         } else if (c == 0) {
             if (this.etat == "eteint") {
-                System.out.println("Le micro-Onde est deja eteint");
+                System.out.println("Le micro-Onde est déja eteint");
             } else {
                 this.etat = "eteint";
-                System.out.println("vous eteigner Le micro-Onde");
+                System.out.println("vous eteignez Le micro-Onde");
             }
         }   else {
             System.out.println("Il ne se passe rien");

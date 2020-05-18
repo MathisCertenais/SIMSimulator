@@ -13,25 +13,25 @@ public class MiroirConnecte extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "allume") {
-                System.out.println("Le miroir est deja allume");
+                System.out.println("Le miroir est deja allumé");
             } else {
                 this.etat = "allume";
-                System.out.println("Vous allume le mirroir connecte");
+                System.out.println("Vous allumez le mirroir connecté");
             }
 
         } else if (c == 1) {
             if (this.etat == "eteint") {
-                System.out.println("Pour changer la luminosite, le miroir doit etre allume");
+                System.out.println("Pour changer la luminosité, le miroir doit etre allumé");
             } else {
                 this.etat = "eteint";
-                System.out.println("vous eteigner le mirroir connecte");
+                System.out.println("vous eteignez le mirroir connecté");
             }
         }else if (c == 2) {
             if (this.etat == "eteint") {
-                System.out.println("le mirroir connecte est deja eteint");
+                System.out.println("le mirroir connecté est déja eteint");
             } else {
                 this.etat = "eteint";
-                System.out.println("vous eteigner le mirroir connecte");
+                System.out.println("vous eteignez le mirroir connecté");
             }
         }   else {
             System.out.println("Il ne se passe rien");

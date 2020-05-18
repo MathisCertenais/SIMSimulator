@@ -14,17 +14,17 @@ public class Frigo extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "ouvert") {
-                System.out.println("Le frigo est deja ouvert");
+                System.out.println("Le frigo est déja ouvert");
             } else {
                 this.etat = "ouvert";
-                System.out.println("Vous ouvre Le frigo");
+                System.out.println("Vous ouvrez Le frigo");
             }
         } else if (c == 0) {
             if (this.etat == "ferme") {
-                System.out.println("Le frigo est deja ferme");
+                System.out.println("Le frigo est deja fermé");
             } else {
                 this.etat = "ferme";
-                System.out.println("vous ferme Le frigo");
+                System.out.println("vous fermez Le frigo");
             }
         }   else {
             System.out.println("Il ne se passe rien");

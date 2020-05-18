@@ -17,7 +17,7 @@ public class AspirateurAutonome extends Objet {
             }
             else {
                 this.etat = "en cours de fonctionnement";
-                System.out.println("L'aspirateur demarre");
+                System.out.println("L'aspirateur démarre");
             }
         }
         else if(c == 1){
@@ -26,7 +26,7 @@ public class AspirateurAutonome extends Objet {
             }
             else {
                 this.etat = "a l'arret";
-                System.out.println("L'aspirateur retourne a sa base et s'arrete");
+                System.out.println("L'aspirateur retourne a sa base et s'arrète");
             }
         }
         else {

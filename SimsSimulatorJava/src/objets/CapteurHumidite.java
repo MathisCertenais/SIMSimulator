@@ -5,7 +5,7 @@ import java.util.Random;
 public class CapteurHumidite extends Objet {
     
     public CapteurHumidite(){
-       super("Capteur d'humidite","en place");
+       super("Capteur d'humidité","en place");
        actions.add("Obtenir la valeur du capteur");    //Ajout des Actions de Bases pour le capteur d'humidite
     }
 

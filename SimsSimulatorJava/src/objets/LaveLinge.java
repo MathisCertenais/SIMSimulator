@@ -11,7 +11,7 @@ public class LaveLinge extends Objet {
     @Override
     public void realiserAction(int c) {
          if(c == 0){
-            System.out.println("vous avez utiliser le lave linge");
+            System.out.println("vous avez utilisé le lave linge");
          }   
          else {
             System.out.println("Il ne se passe rien"); 

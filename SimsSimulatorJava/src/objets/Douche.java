@@ -16,48 +16,48 @@ public class Douche extends Objet {
     @Override
     public void realiserAction(int c) {
         if (c == 0) {
-            if (this.etat == "occupe") {
-                System.out.println("Vous ne pouvez pas rentre, la douche est deja occupe");
+            if (this.etat == "occupé") {
+                System.out.println("Vous ne pouvez pas rentre, la douche est deja occupé");
             } else {
-                this.etat = "occupe";
-                System.out.println("Vous rentre dans la douche");
+                this.etat = "occupé";
+                System.out.println("Vous rentré dans la douche");
             }
         }
         else if (c == 1) {
             if (this.etat == "eau active") {
-                System.out.println("L'eau est deja en train de couler");
+                System.out.println("L'eau est déja en train de couler");
             } else {
                 this.etat = "eau active";
                 System.out.println("Vous ouvre le robinet");
             }
         } else if (c == 2) {
-            if (this.etat == "eau eteinte") {
-                System.out.println("le robinet est deja ferme");
+            if (this.etat == "eau éteinte") {
+                System.out.println("le robinet est déja fermé");
             } else {
-                this.etat = "eau eteinte";
-                System.out.println("Vous ferme le robinet");
+                this.etat = "eau éteinte";
+                System.out.println("Vous fermé le robinet");
             }
         }else if (c == 3) {
                 if (this.etat == "disponible") {
-                    System.out.println("Pour changer la temperature vous devez etre dans la douche");
+                    System.out.println("Pour changer la temperature vous devez être dans la douche");
                 } else {
-                    this.etat = "occupe";
-                    System.out.println("Vous augmenter la temperature");
+                    this.etat = "occupé";
+                    System.out.println("Vous augmentez la temperature");
                 }
             }
             else if (c == 4) {
                 if (this.etat == "disponible") {
                     System.out.println("Pour changer la temperature vous devez etre dans la douche");
                 } else {
-                    this.etat = "occupe";
-                    System.out.println("Vous diminuer la temperature");
+                    this.etat = "occupé";
+                    System.out.println("Vous diminuez la temperature");
                 }
             }else if (c == 5) {
                     if (this.etat == "disponible") {
-                        System.out.println("Vous ne pouvez sortir d'une endroit alors que vous n'y etes pas rentre");
+                        System.out.println("Vous ne pouvez sortir d'un endroit alors que vous n'y êtes pas rentré");
                     } else {
                         this.etat = "disponible";
-                        System.out.println("Vous quitter la douche");
+                        System.out.println("Vous quittez la douche");
                     }
                 }
          else {
