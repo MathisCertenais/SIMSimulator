@@ -23,7 +23,7 @@ public class SecheLinge extends Objet {
             }
             else {
                 this.etat = "éteinte";
-                System.out.println("Le robot seche linge s'éteint");
+                System.out.println("Le seche linge s'éteint");
             }
         }
         else {

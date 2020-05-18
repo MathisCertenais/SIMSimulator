@@ -1,4 +1,5 @@
 package objets;
+import java.util.Random;
 
 public class SondeHumidite extends Objet {
     
@@ -8,28 +9,19 @@ public class SondeHumidite extends Objet {
     }
 
     public void realiserAction(int c) {
-        if(c == 0){
-            if(this.etat == "allumée"){
-                System.out.println("La sonde d'humidité est déjà utilisé");
-            }
-            else {
-                this.etat = "allumée";
-                System.out.println("Le seche linge s'allume");
-            }
-        }
-        else if(c == 1){
-            if(this.etat == "éteinte"){
-                System.out.println("Le seche linge est déjà éteint");
-            }
-            else {
-                this.etat = "éteinte";
-                System.out.println("Le robot seche linge s'éteint");
-            }
-        }
-        else {
-            System.out.println("Il ne se passe rien"); 
-        }
-        
+            System.out.println("Vous regardez la valeur de la sonde d'humidité:"+getHumi(22,24)); 
+    }
+    
+    public static double getHumi(double min, double max){
+        double valeur = nbAlea(min,max);
+        return valeur;
+    }
+    private static double nbAlea(double min, double max){
+        Random r = new Random();
+        int entier = (int)min + r.nextInt((int)max - (int)min);
+        r = new Random();
+        double decimal = 0 + r.nextInt(100 - 0);
+        return entier+(decimal/100);
     }
 
  
