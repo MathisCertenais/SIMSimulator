@@ -4,7 +4,7 @@ public class Piscine extends Objet {
     public Piscine(){
        super("Piscine","vide");
        actions.add("Rentrer dans la piscine");    //Ajout des Actions de Bases pour le canape
-       actions.add("Sortir de la piscine")
+       actions.add("Sortir de la piscine");
     }
 
     @Override
