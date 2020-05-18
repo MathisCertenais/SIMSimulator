@@ -10,7 +10,6 @@ import etages.Toit;
 import objets.*;
 import pieces.AccesGarage;
 import pieces.Ascenseur;
-import pieces.AscenseurVehicule;
 import pieces.Buanderie;
 import pieces.Bureau;
 import pieces.CaveAVin;

@@ -164,5 +164,6 @@ public class launcher {
                 }
             }
         }
+        scan.close();
     }
 }
