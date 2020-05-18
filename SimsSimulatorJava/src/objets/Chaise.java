@@ -19,7 +19,7 @@ public class Chaise extends Objet {
             }
         } else if (c == 1) {
             if (this.etat == "disponible") {
-                System.out.println("Pour vous levez il faudrait deja y etre assis");
+                System.out.println("Pour vous levez il faudrait deja être assis");
             } else {
                 this.etat = "disponible";
                 System.out.println("Vous vous levez de votre chaise");
