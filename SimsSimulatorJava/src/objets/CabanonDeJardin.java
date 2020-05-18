@@ -15,7 +15,7 @@ public class CabanonDeJardin extends Objet {
     @Override
     public void realiserAction(int c) {
         if(c == 0){
-            if(this.etat == "occupe" || this.etat = "outils"){
+            if(this.etat == "occupe" || this.etat == "outils"){
                 System.out.println("Vous êtes déja dans le Cabanon de Jardin");
             }
             else {
