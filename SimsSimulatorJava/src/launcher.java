@@ -15,12 +15,14 @@ public static void main(String[] args) {
     System.out.println("Bienvenue dans notre Maison");
 
     /*** Boucle principal du jeu ***/
-    while(true){
+    boolean play = true;
+    while(play){
         System.out.println("Vous êtes actuellement dans la pièce " + maison.getPiece().getNom() 
             + " à l'étage " + maison.getEtage().getNom());
         
         //Choix de la premiere action
         System.out.println("Vous pouvez :");
+        System.out.println("0- Quitter le jeu");
         System.out.println("1- Changer de piece");
         System.out.println("2- Inspecter un objet");
         if(maison.getPiece() instanceof Ascenseur){
@@ -28,6 +30,12 @@ public static void main(String[] args) {
         }
         System.out.print("Tapez le chiffre correspondant à l'action : ");
         int idAction = scan.nextInt();
+
+        //Quitter le jeu
+        if(idAction == 0){
+            play = false;
+            System.out.println("Merci d'avoir jouer !!");
+        }
 
         //Changement de piece
         if(idAction == 1){
