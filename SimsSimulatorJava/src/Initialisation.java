@@ -158,6 +158,7 @@ public static Maison initialiser() {
     objets_homeCinema.add(tele);
     objets_homeCinema.add(pompeAchaleur);
     objets_homeCinema.add(poubelle);
+    objets_homeCinema.add(canape);
     homeCinema = new HomeCinema("Home_Cinema",piece_Adjacent_homeCinema,objets_homeCinema);
     cuisine.ajouterPiece_Adj(homeCinema);
     sejour.ajouterPiece_Adj(homeCinema);
@@ -221,6 +222,7 @@ public static Maison initialiser() {
     objets_SDB.add(mirroirConnecte);
     objets_SDB.add(lavelinge);
     objets_SDB.add(poubelle);
+    objets_SDB.add(douche);
     salle_de_bain = new SDB("Salle_de_bain",piece_Adjacent_SDB,objets_SDB);
     salleMultiGaming.ajouterPiece_Adj(salle_de_bain);
 
