@@ -33,4 +33,13 @@ public class StoreConnecte extends Objet {
         }
         
     }
+
+    @Override
+    public void actualiser(boolean jour){
+        if(jour){
+            this.etat ="ouvert";
+        }else{
+            this.etat ="ferme";
+        }
+    }
 }
