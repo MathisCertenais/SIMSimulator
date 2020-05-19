@@ -24,8 +24,7 @@ public class launcher {
             System.out.println("Bienvenue Joueur !");
             boolean play = true;
             while (play) {
-                System.out.println("Vous êtes actuellement dans la pièce " + maison.getPiece().getNom() + " à l'étage "
-                        + maison.getEtage().getNom());
+                System.out.println(maison);
 
                 // Choix de la premiere action
                 System.out.println("Vous pouvez :");
