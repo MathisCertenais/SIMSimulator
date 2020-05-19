@@ -23,7 +23,7 @@ public class Four extends Objet {
             if (this.etat == "eteint") {
                 System.out.println("Pour utiliser le four il faut d'abord l'allumer");
             } else {
-                this.etat = "allumer";
+                this.etat = "allume";
                 System.out.println("Vous utilisez le four");
             }
         } 
