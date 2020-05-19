@@ -31,4 +31,7 @@ public abstract class Objet{
     public String toString(){
         return(this.nom + " est " + this.etat);
     }
+
+    public void actualiser(boolean jour){
+    }
 }

@@ -19,7 +19,7 @@ public class Frigo extends Objet {
                 this.etat = "ouvert";
                 System.out.println("Vous ouvrez Le frigo");
             }
-        } else if (c == 0) {
+        } else if (c == 1) {
             if (this.etat == "ferme") {
                 System.out.println("Le frigo est deja fermé");
             } else {
