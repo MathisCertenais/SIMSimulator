@@ -31,7 +31,7 @@ public class Four extends Objet {
             if (this.etat == "eteint") {
                 System.out.println("Le four est déja eteint");
             } else {
-                this.etat = "eteindre";
+                this.etat = "eteint";
                 System.out.println("Vous eteignez le four");
             }
         }else {
