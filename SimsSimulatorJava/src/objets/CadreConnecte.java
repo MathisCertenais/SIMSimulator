@@ -32,7 +32,7 @@ public class CadreConnecte extends Objet {
                 System.out.println("Le cadre connecté s'allume");
             }
         }
-        if(c == 2){
+        else if(c == 2){
             if(this.etat == "eteint"){
                 System.out.println("Veuillez d'abord allumer le cadre avant de changer de photo");
             }
@@ -40,7 +40,7 @@ public class CadreConnecte extends Objet {
                 this.etat = "actif";
                 System.out.println("*changment de la photo*");
             }
-            if(c == 3){
+        }else if(c == 3){
                 if(this.etat == "eteint"){
                     System.out.println("*Super...Vous regardez en écran noir*");
                 }
