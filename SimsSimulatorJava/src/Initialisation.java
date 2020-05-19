@@ -370,7 +370,7 @@ public static Maison initialiser() {
     piece_Adjacent_ascenseur_1erEtage.add(salon);
     ArrayList<Objet> objets_ascenseur_1erEtage = new ArrayList<Objet>();
     //
-    ascenseur_1etage = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_1erEtage,objets_ascenseur_1erEtage);
+    ascenseur_1etage = new Ascenseur("Ascenseur 1er etage",piece_Adjacent_ascenseur_1erEtage,objets_ascenseur_1erEtage);
     salon.ajouterPiece_Adj(ascenseur_1etage);
     /************--------------------FIN---1er--ETAGE-----------------------------********/
     /************-----------------DEBUT--TOIT-------------------------------------********/
@@ -387,7 +387,7 @@ public static Maison initialiser() {
     LinkedList<Piece> piece_adjacent_PotagerHydroponique= new LinkedList<Piece>();
     piece_adjacent_PotagerHydroponique.add(emplacement_véhicule_aerien);
     ArrayList<Objet> objets_PotagerHydroponique = new ArrayList<Objet>();
-    potager_hydroponique = new PotagerHydroponique("Chambre enfant 2",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
+    potager_hydroponique = new PotagerHydroponique("Potager hydroponique",piece_adjacent_PotagerHydroponique,objets_PotagerHydroponique);
     emplacement_véhicule_aerien.ajouterPiece_Adj(potager_hydroponique);
     objets_PotagerHydroponique.add(philipsHue);
     objets_PotagerHydroponique.add(cameraSurveillance);
@@ -431,7 +431,7 @@ public static Maison initialiser() {
     piece_Adjacent_ascenseur_toit.add(entrepos_colis);
     ArrayList<Objet> objets_ascenseur_toit = new ArrayList<Objet>();
     //
-    ascenseur_toit = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_toit,objets_ascenseur_toit);
+    ascenseur_toit = new Ascenseur("Ascenseur toit",piece_Adjacent_ascenseur_toit,objets_ascenseur_toit);
     entrepos_colis.ajouterPiece_Adj(ascenseur_toit);
     /************-----------------FIN--TOIT---------------------------------------********/
 
