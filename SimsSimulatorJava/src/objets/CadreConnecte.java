@@ -14,7 +14,7 @@ public class CadreConnecte extends Objet {
     @Override
     public void realiserAction(int c) {
         if (c == 0) {
-            if (this.etat == "éteint") {
+            if (this.etat == "eteint") {
                 System.out.println("Le cadre connecté est déjà eteint");
             } else {
                 this.etat = "eteint";
