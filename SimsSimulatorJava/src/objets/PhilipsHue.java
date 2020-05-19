@@ -34,4 +34,12 @@ public class PhilipsHue extends Objet {
         }
         
     }
+    @Override
+    public void actualiser(boolean jour){
+        if(jour){
+            this.etat ="éteinte";
+        }else{
+            this.etat ="allumée";
+        }
+    }
 }
