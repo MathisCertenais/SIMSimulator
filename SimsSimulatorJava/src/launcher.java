@@ -9,20 +9,8 @@ import pieces.Piece;
 
 public class launcher {
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Maison maison = Initialisation.initialiser();
-        System.out.println("Bienvenue dans notre Maison");
-        System.out.println("Veuillez choisir votre rôle :");
-        System.out.println("1- Joueur");
-        System.out.println("2- Admin");
-        System.out.print("Tapez le chiffre correspondant : ");
-        int idRole = scan.nextInt();
-
-        /*** Boucle joueur du jeu ***/
-        if (idRole == 1) {
-            System.out.println("Bienvenue Joueur !");
-            boolean play = true;
+    public static void boucleJeu(boolean admin, Maison maison, Scanner scan){
+        boolean play = true;
             while (play) {
                 maison.checkJour();
                 System.out.println(maison);
@@ -139,6 +127,22 @@ public class launcher {
                     }
                 }
             }
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Maison maison = Initialisation.initialiser();
+        System.out.println("Bienvenue dans notre Maison");
+        System.out.println("Veuillez choisir votre rôle :");
+        System.out.println("1- Joueur");
+        System.out.println("2- Admin");
+        System.out.print("Tapez le chiffre correspondant : ");
+        int idRole = scan.nextInt();
+
+        /*** Boucle joueur du jeu ***/
+        if (idRole == 1) {
+            System.out.println("Bienvenue Joueur !");
+            boucleJeu(false, maison, scan);
         }
 
         /*** Boucle admin du jeu ***/
@@ -155,21 +159,7 @@ public class launcher {
                 if (mdp.equals("1234")) {
                     System.out.println("Vous êtes maintenant administrateur");
                     nbEssais = 3;
-                    boolean play = true;
-                    while (play) {
-
-                        // Choix première action
-                        System.out.println("Vous pouvez :");
-                        System.out.println("0- Quitter le jeu");
-                        System.out.print("Tapez le chiffre correspondant : ");
-                        int idAction = scan.nextInt();
-
-                        // Quitter le jeu
-                        if (idAction == 0) {
-                            play = false;
-                            System.out.println("Merci d'avoir jouer !!");
-                        }
-                    }
+                    boucleJeu(true, maison, scan);
                 }
 
                 // Echec mot de passe
