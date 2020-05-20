@@ -20,6 +20,7 @@ import pieces.EntrepotColis;
 import pieces.Exterieur;
 import pieces.Garage;
 import pieces.HomeCinema;
+import pieces.Jardin;
 import pieces.Piece;
 import pieces.PotagerHydroponique;
 import pieces.SDB;
@@ -27,8 +28,10 @@ import pieces.SalleMultiGaming;
 import pieces.SalleServeur;
 import pieces.Salon;
 import pieces.Sejour;
+import pieces.Terrasse;
 import pieces.Toilette;
 import pieces.ZonePanneauPhotovoltaique;
+import sun.net.www.content.text.plain;
 
 public class Initialisation {
 
@@ -67,6 +70,10 @@ public static Maison initialiser() {
     Objet storeConnecte = new StoreConnecte();
     Objet tele = new Tele();
     Objet thermostat = new Thermostat();
+    Objet chaise = new Chaise();
+    Objet cabanonDeJardin = new CabanonDeJardin();
+    Objet potager = new Potager();
+    Objet piscine = new Piscine();
 
     //attributs pièce sous-sol
     Piece emplacement_voitures;
@@ -86,6 +93,10 @@ public static Maison initialiser() {
     Piece salle_de_bain; 
     Piece toilette;
     Piece ascenseur_rdc;
+    Piece terrasse;
+    Piece jardin;
+    
+
 
     //attributs pièce 1er étage
     Piece chambre_enfant_1;
@@ -259,6 +270,43 @@ public static Maison initialiser() {
     bureau = new Bureau("Bureau",piece_Adjacent_bureau,objets_bureau);
     chambre.ajouterPiece_Adj(bureau);
     sejour.ajouterPiece_Adj(bureau);
+
+    /***Partie extérieure du rez-de-chausse */
+
+    // pièce terassse  
+    LinkedList<Piece> piece_Adjacent_terasse = new LinkedList<Piece>();
+    piece_Adjacent_terasse.add(exterieurAccueil);
+    piece_Adjacent_terasse.add(chambre);
+    ArrayList<Objet> objets_terasse = new ArrayList<Objet>();
+    objets_terasse.add(philipsHue);
+    objets_terasse.add(cameraSurveillance);
+    objets_terasse.add(chaise);
+    objets_terasse.add(capteurTemperature);
+    objets_terasse.add(capteurHumidite);
+    objets_terasse.add(canape);
+    objets_terasse.add(poubelle);
+    terrasse = new Terrasse("Terrasse",piece_Adjacent_terasse,objets_terasse);
+    chambre.ajouterPiece_Adj(terrasse);
+    exterieurAccueil.ajouterPiece_Adj(terrasse);
+
+    // pièce Jardin  
+    LinkedList<Piece> piece_Adjacent_jardin = new LinkedList<Piece>();
+    piece_Adjacent_jardin.add(exterieurAccueil);
+    piece_Adjacent_jardin.add(terrasse);
+    ArrayList<Objet> objets_jardin = new ArrayList<Objet>();
+    objets_jardin.add(potager);
+    objets_jardin.add(cameraSurveillance);
+    objets_jardin.add(chaise);
+    objets_jardin.add(capteurTemperature);
+    objets_jardin.add(capteurHumidite);
+    objets_jardin.add(piscine);
+    objets_jardin.add(poubelle);
+    objets_jardin.add(cabanonDeJardin);
+    jardin = new Jardin("Jardin",piece_Adjacent_jardin,objets_jardin);
+    terrasse.ajouterPiece_Adj(jardin);
+    exterieurAccueil.ajouterPiece_Adj(jardin);
+
+    /***FIN de la partie extérieure du rez-de-chausse */
 
     //pièce ascenseur rdc
     LinkedList<Piece> piece_Adjacent_ascenseur_rdc = new LinkedList<Piece>();
@@ -497,6 +545,9 @@ public static Maison initialiser() {
       pieces_rdc.add(toilette);
       pieces_rdc.add(accesGarage);
       pieces_rdc.add(ascenseur_rdc);
+      pieces_rdc.add(terrasse);
+      pieces_rdc.add(jardin);
+
 
        //liste pièce 1er etage 
        LinkedList<Piece> pieces_1erEtage = new LinkedList<Piece>();
