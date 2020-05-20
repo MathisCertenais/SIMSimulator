@@ -4,7 +4,7 @@ package objets;
 public class CabanonDeJardin extends Objet {
     
     public CabanonDeJardin(){
-       super("Cabanon De Jardin", "occupe");
+       super("Cabanon De Jardin", "disponible");
        actions.add("Rentrer dans le Cabanon de Jardin");    //Ajout des Actions de Bases du Cabanon de Jardin
        actions.add("Sortir du Cabanon de Jardin");
        actions.add("Prendre des outils");
