@@ -3,13 +3,90 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import objets.Objet;
+import objets.*;
 import pieces.Ascenseur;
 import pieces.Piece;
 
 public class launcher {
 
     public static void boucleJeu(boolean admin, Maison maison, Scanner scan) {
+
+        // Creation de la liste d'objet
+        Objet aspirateurAutonome = new AspirateurAutonome();
+        Objet cadreConnecte = new CadreConnecte();
+        Objet cameraSurveillance = new CameraSurveillance();
+        Objet canape = new Canape();
+        Objet capteurHumidite = new CapteurHumidite();
+        Objet capteurTemperature = new CapteurTemperature();
+        Objet douche = new Douche();
+        Objet enceinteConnecte = new EnceinteConnecte();
+        Objet fenetre = new Fenetre();
+        Objet ferArepasser = new FerARepasser();
+        Objet four = new Four();
+        Objet frigo = new Frigo();
+        Objet hotte = new Hotte();
+        Objet lavelinge = new LaveLinge();
+        Objet lavevaiselle = new LaveVaisselle();
+        Objet microOnde = new MicroOnde();
+        Objet mirroirConnecte = new MiroirConnecte();
+        Objet pc = new PC();
+        Objet philipsHue = new PhilipsHue();
+        Objet plaque = new Plaque();
+        Objet plateformeVehicule = new PlateformeVehicule();
+        Objet pompeAchaleur = new PompeAChaleur();
+        Objet portailConnecte = new PortailConnecte();
+        Objet poubelle = new Poubelle();
+        Objet robotRangement = new RobotRangement();
+        Objet robotTracteur = new RobotTracteur();
+        Objet secheLinge = new SecheLinge();
+        Objet sondeHumidite = new SondeHumidite();
+        Objet sondeTemperature = new SondeTemperature();
+        Objet storeConnecte = new StoreConnecte();
+        Objet tele = new Tele();
+        Objet thermostat = new Thermostat();
+        Objet chaise = new Chaise();
+        Objet cabanonDeJardin = new CabanonDeJardin();
+        Objet potager = new Potager();
+        Objet piscine = new Piscine();
+        LinkedList<Objet> nouveauxObjets = new LinkedList<Objet>();
+        nouveauxObjets.add(aspirateurAutonome);
+        nouveauxObjets.add(cadreConnecte);
+        nouveauxObjets.add(cameraSurveillance);
+        nouveauxObjets.add(canape);
+        nouveauxObjets.add(capteurHumidite);
+        nouveauxObjets.add(capteurTemperature);
+        nouveauxObjets.add(douche);
+        nouveauxObjets.add(enceinteConnecte);
+        nouveauxObjets.add(fenetre);
+        nouveauxObjets.add(ferArepasser);
+        nouveauxObjets.add(four);
+        nouveauxObjets.add(frigo);
+        nouveauxObjets.add(hotte);
+        nouveauxObjets.add(lavelinge);
+        nouveauxObjets.add(lavevaiselle);
+        nouveauxObjets.add(microOnde);
+        nouveauxObjets.add(mirroirConnecte);
+        nouveauxObjets.add(pc);
+        nouveauxObjets.add(philipsHue);
+        nouveauxObjets.add(plaque);
+        nouveauxObjets.add(plateformeVehicule);
+        nouveauxObjets.add(pompeAchaleur);
+        nouveauxObjets.add(portailConnecte);
+        nouveauxObjets.add(poubelle);
+        nouveauxObjets.add(robotRangement);
+        nouveauxObjets.add(robotTracteur);
+        nouveauxObjets.add(secheLinge);
+        nouveauxObjets.add(sondeHumidite);
+        nouveauxObjets.add(sondeTemperature);
+        nouveauxObjets.add(storeConnecte);
+        nouveauxObjets.add(tele);
+        nouveauxObjets.add(thermostat);
+        nouveauxObjets.add(chaise);
+        nouveauxObjets.add(cabanonDeJardin);
+        nouveauxObjets.add(potager);
+        nouveauxObjets.add(piscine);
+
+        // Début du jeu
         boolean play = true;
         while (play) {
             maison.checkJour();
@@ -132,7 +209,7 @@ public class launcher {
             }
 
             // Changement de l'heure
-            else if (idAction == 454) {
+            else if (idAction == 454 && admin) {
                 System.out.println("Avancez dans le temps de combien d'heures ?");
                 System.out.println("Tapez le nombre en heure avec une virgule pour les minutes");
                 System.out.print("(Exemple : 8h30 = 8,5) : ");
@@ -141,11 +218,28 @@ public class launcher {
             }
 
             // Ajout d'un objet
-            else if (idAction == 666) {
+            else if (idAction == 666 && admin) {
 
-            } 
-            
-            //Mauvais numéro
+                //Affichage des objets
+                System.out.println("Liste d'objets disponibles :");
+                for (int i = 0; i < nouveauxObjets.size(); i++) {
+                    System.out.println((i + "- " + nouveauxObjets.get(i)));
+                }
+
+                //Selection d'un objet
+                System.out.print("Tapez le numéro correspondant : ");
+                int idObjetAjout = scan.nextInt();
+
+                //Ajout de l'objet
+                boolean present = false;
+                nouveauxObjets.get(idObjetAjout).getClass();
+                for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){
+                    present = (maison.getPiece().getlist_objet().get(i) 
+                        instanceof nouveauxObjets.get(idObjetAjout).getClass());
+                }
+            }
+
+            // Mauvais numéro
             else {
                 System.out.println("Erreur, le numéro est incorrect");
             }
