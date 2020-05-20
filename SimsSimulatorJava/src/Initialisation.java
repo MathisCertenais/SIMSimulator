@@ -31,7 +31,6 @@ import pieces.Sejour;
 import pieces.Terrasse;
 import pieces.Toilette;
 import pieces.ZonePanneauPhotovoltaique;
-import sun.net.www.content.text.plain;
 
 public class Initialisation {
 
