@@ -31,4 +31,7 @@ public abstract class Piece {
     public void ajouterPiece_Adj(Piece p){
         this.piece_Ajacente.add(p);
     }
+    public boolean verif(boolean admin){
+        return true;
+    }
 }
