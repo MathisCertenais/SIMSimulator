@@ -475,11 +475,11 @@ public static Maison initialiser() {
 
     //pièce ascenseur sous_sol
     LinkedList<Piece> piece_Adjacent_ascenseur_sous_sol = new LinkedList<Piece>();
-    piece_Adjacent_ascenseur_sous_sol.add(salle_serveur);
+    piece_Adjacent_ascenseur_sous_sol.add(cave_a_vin);
     ArrayList<Objet> objets_ascenseur_sous_sol = new ArrayList<Objet>();
     //
-    ascenseur_sous_sol = new Ascenseur("Ascenseur",piece_Adjacent_ascenseur_sous_sol,objets_ascenseur_sous_sol);
-    salle_serveur.ajouterPiece_Adj(ascenseur_sous_sol);
+    ascenseur_sous_sol = new Ascenseur("Ascenseur sous-sol",piece_Adjacent_ascenseur_sous_sol,objets_ascenseur_sous_sol);
+    cave_a_vin.ajouterPiece_Adj(ascenseur_sous_sol);
 
     /************-----------------FIN--SOUS-SOL-----------------------------------********/
 
