@@ -49,6 +49,10 @@ public class Maison {
         return liste_etages;
     }
 
+    public boolean getJour(){
+        return jour;
+    }
+
     public void checkJour() {
         if (heure > 20 || heure < 6) {
             jour = false;

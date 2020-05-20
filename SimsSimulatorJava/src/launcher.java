@@ -59,6 +59,9 @@ public class launcher {
                     int idPiece = scan.nextInt();
                     if (idPiece > -1 && idPiece < pieces_possibles.size()) {
                         maison.setPiece(pieces_possibles.get(idPiece));
+                        for (Objet objet : pieces_possibles.get(idPiece).getlist_objet()) {
+                            objet.actualiser(maison.getJour());
+                        }
                         maison.passageTps(0.3);
                     } else {
                         System.out.println("Erreur, le numéro ne correspond à aucune piece");
