@@ -230,7 +230,7 @@ public class launcher {
                 System.out.print("Tapez le numéro correspondant : ");
                 int idObjetAjout = scan.nextInt();
 
-                //Ajout de l'objet
+                //Ajout de l'objet nksm c'est de la merde
                 boolean present = false;
                 for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){    
                    present = maison.getPiece().getlist_objet().get(i).getNom()
