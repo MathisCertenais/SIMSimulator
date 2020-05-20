@@ -232,10 +232,9 @@ public class launcher {
 
                 //Ajout de l'objet
                 boolean present = false;
-                nouveauxObjets.get(idObjetAjout).getClass();
-                for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){
-                    present = (maison.getPiece().getlist_objet().get(i) 
-                        instanceof nouveauxObjets.get(idObjetAjout).getClass());
+                for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){    
+                   present = maison.getPiece().getlist_objet().get(i).getNom()
+                   .equals(nouveauxObjets.get(idObjetAjout).getNom()) ;
                 }
             }
 
