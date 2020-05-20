@@ -223,7 +223,7 @@ public class launcher {
                 //Affichage des objets
                 System.out.println("Liste d'objets disponibles :");
                 for (int i = 0; i < nouveauxObjets.size(); i++) {
-                    System.out.println((i + "- " + nouveauxObjets.get(i)));
+                    System.out.println((i + "- " + nouveauxObjets.get(i).getNom()));
                 }
 
                 //Selection d'un objet
@@ -233,8 +233,15 @@ public class launcher {
                  //Ajout de l'objet nksm c'est de la merde
                  boolean present = false;
                  for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){    
-                    present = maison.getPiece().getlist_objet().get(i).getNom()
+                    present = present || maison.getPiece().getlist_objet().get(i).getNom()
                     .equals(nouveauxObjets.get(idObjetAjout).getNom()) ;
+                 }
+                 if(present){
+                     System.out.println("L'objet est déja présent dans la pièce");
+                 }
+                 else {
+                     maison.getPiece().getlist_objet().add(nouveauxObjets.get(idObjetAjout));
+                     System.out.println("L'objet a été ajouté");
                  }
             }
 
