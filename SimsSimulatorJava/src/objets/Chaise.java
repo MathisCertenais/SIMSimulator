@@ -12,7 +12,7 @@ public class Chaise extends Objet {
     public void realiserAction(int c) {
         if (c == 0) {
             if (this.etat == "occupe") {
-                System.out.println("La chaise est deja occupé");
+                System.out.println("Vous êtes déja assis");
             } else {
                 this.etat = "occupe";
                 System.out.println("vous vous asseyez dans votre chaise");
