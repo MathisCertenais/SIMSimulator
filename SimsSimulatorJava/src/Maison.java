@@ -15,12 +15,14 @@ public class Maison {
     public Maison(LinkedList<Etage> liste_etages) {
         this.liste_etages = liste_etages;
         jour = true;
-        heure = 8.7;
+        heure = 16.0;
 
     }
 
     public void setEtage(Etage etage_actuel) {
-        if (liste_etages.contains(etage_actuel)) {
+        if (memory_etage == etage_actuel) {
+            System.out.println("Vous y êtes déjà");
+        } else if (liste_etages.contains(etage_actuel)) {
             memory_etage = etage_actuel;
         } else {
             System.out.println("Impossible, l'étage n'existe pas");
@@ -47,15 +49,31 @@ public class Maison {
         return liste_etages;
     }
 
-    public String toString(){
+    public void checkJour() {
+        if (heure > 20 || heure < 6) {
+            jour = false;
+        } else
+            jour = true;
+    }
+
+    public void passageTps(double t) {
+        this.heure = this.heure + t;
+        if (this.heure >= 24) {
+            this.heure = this.heure - 24;
+        }
+    }
+
+    public String toString() {
         String j;
         String h;
         String m;
-        if(this.jour) j = "jour";
-        else j = "nuit";
-        h = "" + (int)(this.heure - this.heure%1);
-        m = "" + (int)((this.heure%1)*60);
-        return("Vous êtes dans la pièce " + this.memory_piece.getNom() + " à l'étage "
-            + this.memory_etage.getNom() + ", il est " + h + "h" + m + " et il fait " + j);
+        if (this.jour)
+            j = "jour";
+        else
+            j = "nuit";
+        h = "" + (int) (this.heure - this.heure % 1);
+        m = "" + (int) ((this.heure % 1) * 60);
+        return ("Vous êtes dans la pièce " + this.memory_piece.getNom() + " à l'étage " + this.memory_etage.getNom()
+                + ", il est " + h + "h" + m + " et il fait " + j);
     }
 }
