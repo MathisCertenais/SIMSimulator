@@ -4,7 +4,7 @@ package objets;
 public class Potager extends Objet {
     
     public Potager(){
-       super("Potager", "fermé");
+       super("Potager", "occupe");
        actions.add("Rentrer dans le potager");    //Ajout des Actions de Bases du potager
        actions.add("Sortir du potager");
        actions.add("prendre des légumes");
