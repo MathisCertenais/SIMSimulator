@@ -24,6 +24,7 @@ public class launcher {
             System.out.println("Bienvenue Joueur !");
             boolean play = true;
             while (play) {
+                maison.checkJour();
                 System.out.println(maison);
 
                 // Choix de la premiere action
@@ -58,6 +59,7 @@ public class launcher {
                     int idPiece = scan.nextInt();
                     if (idPiece > -1 && idPiece < pieces_possibles.size()) {
                         maison.setPiece(pieces_possibles.get(idPiece));
+                        maison.passageTps(0.3);
                     } else {
                         System.out.println("Erreur, le numéro ne correspond à aucune piece");
                     }
@@ -96,6 +98,7 @@ public class launcher {
                             int idActionObj = scan.nextInt();
                             if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
                                 maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
+                                maison.passageTps(0.15);
                             } else if (idActionObj == actions_dispo.size()) {
                                 focusObj = false;
                             } else {
@@ -116,6 +119,8 @@ public class launcher {
                     for (int i = 0; i < maison.getAllEtage().size(); i++) {
                         System.out.println(i + "- " + maison.getAllEtage().get(i).getNom());
                     }
+
+                    //Choix de l'étage
                     System.out.print("Tapez le chiffre correspondant à l'étage : ");
                     int idEtage = scan.nextInt();
                     if (idEtage > -1 && idEtage < maison.getAllEtage().size()) {
@@ -125,6 +130,7 @@ public class launcher {
                                 maison.setPiece(maison.getEtage().getPiece(i));
                             }
                         }
+                        maison.passageTps(0.5);
                     } else {
                         System.out.println("Erreur, le numéro ne correspond à aucun étage");
                     }
