@@ -15,7 +15,7 @@ public class Maison {
     public Maison(LinkedList<Etage> liste_etages) {
         this.liste_etages = liste_etages;
         jour = true;
-        heure = 8.5;
+        heure = 8.7;
 
     }
 
@@ -53,9 +53,9 @@ public class Maison {
         String m;
         if(this.jour) j = "jour";
         else j = "nuit";
-        h = "" + (this.heure - this.heure%1);
-        m = "" + this.heure%1;
+        h = "" + (int)(this.heure - this.heure%1);
+        m = "" + (int)((this.heure%1)*60);
         return("Vous êtes dans la pièce " + this.memory_piece.getNom() + " à l'étage "
-            + this.memory_etage.getNom() + ", il est " + h + ":" + m + " et il fait " + j);
+            + this.memory_etage.getNom() + ", il est " + h + "h" + m + " et il fait " + j);
     }
 }
