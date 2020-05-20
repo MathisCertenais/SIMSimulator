@@ -114,7 +114,7 @@ public class launcher {
             }
 
             // Changement de piece
-            if (idAction == 1) {
+            else if (idAction == 1) {
 
                 // Affichage des pieces
                 System.out.println("Aller dans la piece :");
@@ -232,9 +232,9 @@ public class launcher {
 
                 //Ajout de l'objet nksm c'est de la merde
                 boolean present = false;
-                for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){    
-                   present = maison.getPiece().getlist_objet().get(i).getNom()
-                   .equals(nouveauxObjets.get(idObjetAjout).getNom()) ;
+                for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){
+                    Class obj = nouveauxObjets.get(idObjetAjout).getClass();
+                    present = maison.getPiece().getlist_objet().get(i) instanceof obj;
                 }
             }
 
