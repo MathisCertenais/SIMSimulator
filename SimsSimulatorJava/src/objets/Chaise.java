@@ -11,7 +11,7 @@ public class Chaise extends Objet {
     @Override
     public void realiserAction(int c) {
         if (c == 0) {
-            if (this.etat == "occupé") {
+            if (this.etat == "occupe") {
                 System.out.println("La chaise est deja occupé");
             } else {
                 this.etat = "occupe";
