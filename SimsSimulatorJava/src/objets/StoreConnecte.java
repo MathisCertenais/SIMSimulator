@@ -39,7 +39,7 @@ public class StoreConnecte extends Objet {
         if(jour){
             this.etat ="ouvert";
         }else{
-            this.etat ="ferme";
+            this.etat ="fermé";
         }
     }
 }
