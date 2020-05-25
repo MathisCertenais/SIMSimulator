@@ -93,6 +93,7 @@ public class launcher {
             System.out.println(maison);
 
             // Choix de la premiere action
+            System.out.println("-----------------------------");
             System.out.println("Vous pouvez :");
             System.out.println("0- Quitter le jeu");
             System.out.println("1- Changer de piece");
@@ -106,6 +107,7 @@ public class launcher {
             }
             System.out.print("Tapez le chiffre correspondant à l'action : ");
             int idAction = scan.nextInt();
+            System.out.println("");
 
             // Quitter le jeu
             if (idAction == 0) {
@@ -150,6 +152,7 @@ public class launcher {
                 // Choix de l'objet
                 System.out.print("Tapez le chiffre correspondant à l'objet : ");
                 int idObjet = scan.nextInt();
+                System.out.println("");
                 if (idObjet > -1 && idObjet < objets_dispo.size()) {
 
                     // Focus sur un objet
@@ -168,6 +171,7 @@ public class launcher {
                         // Choix de l'action
                         System.out.print("Tapez le chiffre correspondant à l'objet : ");
                         int idActionObj = scan.nextInt();
+                        System.out.println("");
                         if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
                             maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
                             maison.passageTps(0.15);
