@@ -104,6 +104,7 @@ public class launcher {
             if (admin) {
                 System.out.println("454- Fixer l'heure");
                 System.out.println("666- Ajouter un objet dans la pièce");
+                System.out.println("999- Supprimer un objet dans la pièce");
             }
             System.out.print("Tapez le chiffre correspondant à l'action : ");
             int idAction = scan.nextInt();
@@ -251,6 +252,30 @@ public class launcher {
                 } else {
                     maison.getPiece().getlist_objet().add(nouveauxObjets.get(idObjetAjout));
                     System.out.println("L'objet a été ajouté");
+                }
+            }
+
+            // Suppression d'un objet
+            else if (idAction == 999) {
+
+                // Affichage des objets
+                if (maison.getPiece().getlist_objet().isEmpty()) {
+                    System.out.println("Il n'y a pas d'objet dans cette pièce");
+                } else {
+                    System.out.println("Supprimer quel objet :");
+                    ArrayList<Objet> objets_dispo = maison.getPiece().getlist_objet();
+                    for (int i = 0; i < objets_dispo.size(); i++) {
+                        System.out.println(i + "- " + objets_dispo.get(i).getNom());
+                    }
+
+                    // Choix de l'objet
+                    System.out.print("Tapez le chiffre correspondant à l'objet : ");
+                    int idObjet = scan.nextInt();
+                    System.out.println("");
+                    if (idObjet > -1 && idObjet < objets_dispo.size()) {
+                        maison.getPiece().getlist_objet().remove(idObjet);
+                        System.out.println("L'objet à été supprimé");
+                    }
                 }
             }
 
