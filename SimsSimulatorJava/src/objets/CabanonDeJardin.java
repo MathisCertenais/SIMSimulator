@@ -1,5 +1,12 @@
 package objets;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import maison.Maison;
+import pieces.Jardin;
+import pieces.Piece;
+import pieces.PieceSecrete;
 
 public class CabanonDeJardin extends Objet {
     
@@ -12,8 +19,8 @@ public class CabanonDeJardin extends Objet {
        
     }
 
-    @Override
-    public void realiserAction(int c) {
+    
+    public void realiserAction(int c,boolean admin,Maison maison) {
         if(c == 0){
             if(this.etat == "occupe" || this.etat == "Occupe"){         //Occupe correspond a quand on a pris des outils
                 System.out.println("Vous êtes déja dans le Cabanon de Jardin");
@@ -51,10 +58,44 @@ public class CabanonDeJardin extends Objet {
                 this.etat = "occupe";
                 System.out.println("*Vous deposez des outils*");
             }
-        }
-        else {
+        }else if(admin && c == 4){
+           Piece piecesecrete =  creationPièceSecrete(maison);
+            maison.getEtage().getAllPiece().add(piecesecrete);
+            maison.setPiece(piecesecrete);
+            System.out.println("pièce changé");
+        }else {
             System.out.println("Il ne se passe rien"); 
         }
         
     }
+  private Piece creationPièceSecrete(Maison maison){
+    LinkedList<Piece> piece_Adjacent_PieceSecrete = new LinkedList<Piece>();
+    for (Piece piece : maison.getEtage().getAllPiece()) {
+        if(piece instanceof Jardin){
+            piece_Adjacent_PieceSecrete.add(piece);
+        }
+    }
+    ArrayList<Objet> objets_PieceSecrete = new ArrayList<Objet>();
+    for (Objet objet : maison.getPiece().getlist_objet()) {
+        if(objet instanceof CameraSurveillance){
+            objets_PieceSecrete.add(objet);
+        }else if(objet instanceof CameraSurveillance){
+            objets_PieceSecrete.add(objet);
+        }else if(objet instanceof Chaise){
+            objets_PieceSecrete.add(objet);
+        }else if(objet instanceof CapteurTemperature){
+            objets_PieceSecrete.add(objet);
+        }else if(objet instanceof CapteurHumidite){
+            objets_PieceSecrete.add(objet);
+        }else if(objet instanceof Poubelle){
+            objets_PieceSecrete.add(objet);
+        }
+
+    }
+    return new PieceSecrete("Bunker",piece_Adjacent_PieceSecrete,objets_PieceSecrete);
+  }   
+// pièce secrete  
+
+
+
 }

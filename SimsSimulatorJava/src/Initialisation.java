@@ -7,6 +7,7 @@ import etages.Etage1;
 import etages.RDC;
 import etages.SousSol;
 import etages.Toit;
+import maison.Maison;
 import objets.*;
 import pieces.AccesGarage;
 import pieces.Ascenseur;
@@ -22,6 +23,7 @@ import pieces.Garage;
 import pieces.HomeCinema;
 import pieces.Jardin;
 import pieces.Piece;
+import pieces.PieceSecrete;
 import pieces.PotagerHydroponique;
 import pieces.SDB;
 import pieces.SalleMultiGaming;
@@ -94,6 +96,7 @@ public static Maison initialiser() {
     Piece ascenseur_rdc;
     Piece terrasse;
     Piece jardin;
+    
     
 
 
@@ -304,6 +307,12 @@ public static Maison initialiser() {
     jardin = new Jardin("Jardin",piece_Adjacent_jardin,objets_jardin);
     terrasse.ajouterPiece_Adj(jardin);
     exterieurAccueil.ajouterPiece_Adj(jardin);
+
+    
+    
+    
+
+
 
     /***FIN de la partie extérieure du rez-de-chausse */
 

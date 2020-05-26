@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import maison.Maison;
 import objets.*;
 import pieces.Ascenseur;
 import pieces.Piece;
@@ -87,7 +88,7 @@ public class launcher {
         nouveauxObjets.add(piscine);
 
         // Début du jeu
-        boolean play = true;
+        boolean play = true,ajoutAction = false;
         while (play) {
             maison.checkJour();
             System.out.println(maison);
@@ -168,6 +169,10 @@ public class launcher {
 
                             // Affichage des actions
                             System.out.println("Actions réalisable :");
+                            if(maison.getPiece().getlist_objet().get(idObjet) instanceof CabanonDeJardin && admin && !ajoutAction ){
+                                ((CabanonDeJardin) maison.getPiece().getlist_objet().get(idObjet)).getAction().add("Ouvrir la pièce secrète");
+                                ajoutAction = true;
+                            }
                             LinkedList<String> actions_dispo = objets_dispo.get(idObjet).getAction();
                             for (int i = 0; i < actions_dispo.size(); i++) {
                                 System.out.println(i + "- " + actions_dispo.get(i));
@@ -179,7 +184,12 @@ public class launcher {
                             int idActionObj = scan.nextInt();
                             System.out.println("");
                             if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
-                                maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
+                                if(maison.getPiece().getlist_objet().get(idObjet) instanceof CabanonDeJardin){
+                                    ((CabanonDeJardin) maison.getPiece().getlist_objet().get(idObjet)).realiserAction(idActionObj,admin,maison);
+                                    focusObj = false;
+                                }else{
+                                    maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
+                                }
                                 maison.passageTps(0.15);
                             } else if (idActionObj == actions_dispo.size()) {
                                 focusObj = false;
