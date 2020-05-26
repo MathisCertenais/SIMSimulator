@@ -128,12 +128,14 @@ public class launcher {
                 // Choix de la piece
                 System.out.print("Tapez le chiffre correspondant à la pièce : ");
                 int idPiece = scan.nextInt();
-                if (idPiece > -1 && idPiece < pieces_possibles.size()) {
+                if (idPiece > -1 && idPiece < pieces_possibles.size() && pieces_possibles.get(idPiece).verif(admin)) {
                     maison.setPiece(pieces_possibles.get(idPiece));
                     for (Objet objet : pieces_possibles.get(idPiece).getlist_objet()) {
                         objet.actualiser(maison.getJour());
                     }
                     maison.passageTps(0.3);
+                } else if (!pieces_possibles.get(idPiece).verif(admin)) {
+                    System.out.println("Vous n'avez pas l'autorisation d'accéder à cette pièce");
                 } else {
                     System.out.println("Erreur, le numéro ne correspond à aucune piece");
                 }
@@ -143,46 +145,50 @@ public class launcher {
             else if (idAction == 2) {
 
                 // Affichage des objets
-                System.out.println("Inspecter quel objet :");
-                ArrayList<Objet> objets_dispo = maison.getPiece().getlist_objet();
-                for (int i = 0; i < objets_dispo.size(); i++) {
-                    System.out.println(i + "- " + objets_dispo.get(i).getNom());
-                }
-
-                // Choix de l'objet
-                System.out.print("Tapez le chiffre correspondant à l'objet : ");
-                int idObjet = scan.nextInt();
-                System.out.println("");
-                if (idObjet > -1 && idObjet < objets_dispo.size()) {
-
-                    // Focus sur un objet
-                    boolean focusObj = true;
-                    while (focusObj) {
-                        System.out.println(objets_dispo.get(idObjet));
-
-                        // Affichage des actions
-                        System.out.println("Actions réalisable :");
-                        LinkedList<String> actions_dispo = objets_dispo.get(idObjet).getAction();
-                        for (int i = 0; i < actions_dispo.size(); i++) {
-                            System.out.println(i + "- " + actions_dispo.get(i));
-                        }
-                        System.out.println(actions_dispo.size() + "- Laisser l'objet tranquille");
-
-                        // Choix de l'action
-                        System.out.print("Tapez le chiffre correspondant à l'objet : ");
-                        int idActionObj = scan.nextInt();
-                        System.out.println("");
-                        if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
-                            maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
-                            maison.passageTps(0.15);
-                        } else if (idActionObj == actions_dispo.size()) {
-                            focusObj = false;
-                        } else {
-                            System.out.println("Erreur, le noméro ne correspond à aucune action");
-                        }
-                    }
+                if (maison.getPiece().getlist_objet().isEmpty()) {
+                    System.out.println("Il n'y a pas d'objet dans cette pièce");
                 } else {
-                    System.out.println("Erreur, le numéro ne correspond à aucun objet");
+                    System.out.println("Inspecter quel objet :");
+                    ArrayList<Objet> objets_dispo = maison.getPiece().getlist_objet();
+                    for (int i = 0; i < objets_dispo.size(); i++) {
+                        System.out.println(i + "- " + objets_dispo.get(i).getNom());
+                    }
+
+                    // Choix de l'objet
+                    System.out.print("Tapez le chiffre correspondant à l'objet : ");
+                    int idObjet = scan.nextInt();
+                    System.out.println("");
+                    if (idObjet > -1 && idObjet < objets_dispo.size()) {
+
+                        // Focus sur un objet
+                        boolean focusObj = true;
+                        while (focusObj) {
+                            System.out.println(objets_dispo.get(idObjet));
+
+                            // Affichage des actions
+                            System.out.println("Actions réalisable :");
+                            LinkedList<String> actions_dispo = objets_dispo.get(idObjet).getAction();
+                            for (int i = 0; i < actions_dispo.size(); i++) {
+                                System.out.println(i + "- " + actions_dispo.get(i));
+                            }
+                            System.out.println(actions_dispo.size() + "- Laisser l'objet tranquille");
+
+                            // Choix de l'action
+                            System.out.print("Tapez le chiffre correspondant à l'objet : ");
+                            int idActionObj = scan.nextInt();
+                            System.out.println("");
+                            if (idActionObj > -1 && idActionObj < actions_dispo.size()) {
+                                maison.getPiece().getlist_objet().get(idObjet).realiserAction(idActionObj);
+                                maison.passageTps(0.15);
+                            } else if (idActionObj == actions_dispo.size()) {
+                                focusObj = false;
+                            } else {
+                                System.out.println("Erreur, le noméro ne correspond à aucune action");
+                            }
+                        }
+                    } else {
+                        System.out.println("Erreur, le numéro ne correspond à aucun objet");
+                    }
                 }
 
             }
@@ -224,29 +230,28 @@ public class launcher {
             // Ajout d'un objet
             else if (idAction == 666 && admin) {
 
-                //Affichage des objets
+                // Affichage des objets
                 System.out.println("Liste d'objets disponibles :");
                 for (int i = 0; i < nouveauxObjets.size(); i++) {
                     System.out.println((i + "- " + nouveauxObjets.get(i).getNom()));
                 }
 
-                //Selection d'un objet
+                // Selection d'un objet
                 System.out.print("Tapez le numéro correspondant : ");
                 int idObjetAjout = scan.nextInt();
 
-                 //Ajout de l'objet nksm c'est de la merde
-                 boolean present = false;
-                 for(int i=0; i<maison.getPiece().getlist_objet().size(); i++){    
+                // Ajout de l'objet nksm c'est de la merde
+                boolean present = false;
+                for (int i = 0; i < maison.getPiece().getlist_objet().size(); i++) {
                     present = present || maison.getPiece().getlist_objet().get(i).getNom()
-                    .equals(nouveauxObjets.get(idObjetAjout).getNom()) ;
-                 }
-                 if(present){
-                     System.out.println("L'objet est déja présent dans la pièce");
-                 }
-                 else {
-                     maison.getPiece().getlist_objet().add(nouveauxObjets.get(idObjetAjout));
-                     System.out.println("L'objet a été ajouté");
-                 }
+                            .equals(nouveauxObjets.get(idObjetAjout).getNom());
+                }
+                if (present) {
+                    System.out.println("L'objet est déja présent dans la pièce");
+                } else {
+                    maison.getPiece().getlist_objet().add(nouveauxObjets.get(idObjetAjout));
+                    System.out.println("L'objet a été ajouté");
+                }
             }
 
             // Mauvais numéro
