@@ -16,7 +16,7 @@ public class Maison {
     public Maison(LinkedList<Etage> liste_etages) {
         this.liste_etages = liste_etages;
         jour = true;
-        heure = 16.0;
+        heure = 15.5;
 
     }
 
