@@ -62,7 +62,7 @@ public class CabanonDeJardin extends Objet {
            Piece piecesecrete =  creationPièceSecrete(maison);
             maison.getEtage().getAllPiece().add(piecesecrete);
             maison.setPiece(piecesecrete);
-            System.out.println("pièce changé");
+            System.out.println("Une porte dérobée apparait et vous entrer dans la pièce secrète");
         }else {
             System.out.println("Il ne se passe rien"); 
         }
