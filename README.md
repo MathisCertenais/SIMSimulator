@@ -1,6 +1,6 @@
 # SimsSimulator 
 
-Ce projet à été réalisé dans le cadre du module Projet IOT du Semestre 6 à L'ESIR.
+Ce projet à été réalisé dans le cadre du module Projet IOT du Semestre 6 à l'ESIR.
 
 ## Démarrage du Projet 
 
